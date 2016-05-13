@@ -20,10 +20,109 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="E5M-Ja-9t6"/>
+                    <connections>
+                        <segue destination="tzU-Md-Xfe" kind="show" identifier="TASKS_TO_CREATE" id="u95-dx-Omo"/>
+                        <segue destination="JMH-so-J4K" kind="show" id="Mkd-AV-Qru"/>
+                        <segue destination="4ji-NH-12p" kind="show" identifier="TASKS_TO_DASHBOARD" id="1yS-ks-dG9"/>
+                        <segue destination="mHz-Bi-CO1" kind="show" identifier="TASKS_TO_SETTINGS" id="oYq-7T-u1C"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1733" y="-41"/>
+        </scene>
+        <!--Task View Controller-->
+        <scene sceneID="RJ8-9k-aG8">
+            <objects>
+                <viewController id="JMH-so-J4K" customClass="TaskViewController" customModule="family_coin" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BJa-vX-uc2"/>
+                        <viewControllerLayoutGuide type="bottom" id="bjN-DP-7Rq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ih5-Kg-yqx">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cuu-5j-CSC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2200" y="336"/>
+        </scene>
+        <!--Create Task View Controller-->
+        <scene sceneID="ZJa-pI-Z7c">
+            <objects>
+                <viewController id="tzU-Md-Xfe" customClass="CreateTaskViewController" customModule="family_coin" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="PML-tw-hjU"/>
+                        <viewControllerLayoutGuide type="bottom" id="AcN-Nc-BSw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="AiI-A6-QCu">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ruv-vf-HXd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2200" y="-431"/>
+        </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="Xla-If-SQ5">
+            <objects>
+                <viewController id="mHz-Bi-CO1" customClass="SettingsViewController" customModule="family_coin" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gvH-c9-lgD"/>
+                        <viewControllerLayoutGuide type="bottom" id="rdn-Lx-FFq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hPI-0Q-973">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <segue destination="Ppm-QY-g73" kind="show" identifier="SETTINGS_TO_USERS" id="dEo-QA-hdB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yCn-DM-FSn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2775" y="-720"/>
+        </scene>
+        <!--Users View Controller-->
+        <scene sceneID="c1o-J6-dbk">
+            <objects>
+                <viewController id="Ppm-QY-g73" customClass="UsersViewController" customModule="family_coin" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Afk-In-b1M"/>
+                        <viewControllerLayoutGuide type="bottom" id="OYo-wu-uGm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="SDk-a5-pJC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="okS-aA-uzR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3284" y="-478"/>
+        </scene>
+        <!--Dashboard View Controller-->
+        <scene sceneID="YUP-KA-HHr">
+            <objects>
+                <viewController id="4ji-NH-12p" customClass="DashboardViewController" customModule="family_coin" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6va-su-eYe"/>
+                        <viewControllerLayoutGuide type="bottom" id="AYf-Px-Cfc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Tz9-uA-3aw">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="B2x-VP-gW8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2775" y="-41"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="YQ8-xC-las">

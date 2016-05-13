@@ -57,6 +57,7 @@ class KeyAuthViewController: BaseViewController {
             if error != nil {
                 self.showError(error)
             } else {
+                UserDefaultsManager.sharedInstance.userId = user.userId
                 self.performSegueWithIdentifier("START_VIEW_FORM_KEY_VIEW", sender: nil)
             }
         })

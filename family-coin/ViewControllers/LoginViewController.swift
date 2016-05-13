@@ -41,7 +41,6 @@ class LoginViewController: BaseViewController {
                 self.showError(error)
             } else {
                 self.userDefaults.apiKey = data.uid
-                self.userDefaults.isClient = false
                 self.toMainViewController()
             }
             //

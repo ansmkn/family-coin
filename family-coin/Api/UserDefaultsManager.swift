@@ -7,22 +7,22 @@ import Foundation
 
 struct DefaultsKeys {
     static let apiKey = "apiKey"
+    static let userId = "userId"
     static let isClient = "isClient"
 }
 
 class UserDefaultsManager {
     let defaults = NSUserDefaults.standardUserDefaults()
+    static let sharedInstance = UserDefaultsManager()
 
     private var _isClient : Bool = true
     
+    init() {
+        
+    }
+    
     var isClient: Bool {
-        set {
-            _isClient = newValue
-            defaults.setBool(newValue, forKey: DefaultsKeys.isClient)
-        }
-        get {
-            return defaults.boolForKey(DefaultsKeys.isClient)
-        }
+        return userId != nil
     }
 
     private var _apiKey : String?
@@ -37,6 +37,21 @@ class UserDefaultsManager {
                 _apiKey = defaults.objectForKey(DefaultsKeys.apiKey) as? String
             }
             return _apiKey
+        }
+    }
+    
+    private var _userId : String?
+    
+    var userId: String? {
+        set {
+            _userId = newValue
+            defaults.setObject(newValue, forKey: DefaultsKeys.userId)
+        }
+        get {
+            if _userId == nil {
+                _userId = defaults.objectForKey(DefaultsKeys.userId) as? String
+            }
+            return _userId
         }
     }
 

@@ -32,5 +32,16 @@ class FirebaseManager {
             return _usersUrl
         }
     }
+    
+    var userUrl: Firebase? {
+        guard let userId = UserDefaultsManager.sharedInstance.userId else {
+            return nil;
+        }
+        return self.userUrl(userId)
+    }
+    
+    func userUrl(userId: String) -> Firebase {
+        return usersUrl.childByAppendingPath(userId)
+    }
 
 }

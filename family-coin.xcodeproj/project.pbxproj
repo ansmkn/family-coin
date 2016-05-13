@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A39622D1CE6932500B4FA0B /* CreateTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A39622C1CE6932500B4FA0B /* CreateTaskViewController.swift */; };
+		2A39622F1CE693F500B4FA0B /* TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A39622E1CE693F500B4FA0B /* TaskViewController.swift */; };
+		2A3962311CE6945900B4FA0B /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3962301CE6945900B4FA0B /* DashboardViewController.swift */; };
+		2A3962331CE695A300B4FA0B /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3962321CE695A300B4FA0B /* SettingsViewController.swift */; };
+		2A3962351CE69A0E00B4FA0B /* UsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3962341CE69A0E00B4FA0B /* UsersViewController.swift */; };
+		2A3962371CE69AD500B4FA0B /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3962361CE69AD500B4FA0B /* UserTableViewCell.swift */; };
+		2A39623A1CE69C7900B4FA0B /* StringAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3962391CE69C7900B4FA0B /* StringAttributes.swift */; };
+		2A39623C1CE69E3D00B4FA0B /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A39623B1CE69E3D00B4FA0B /* TaskTableViewCell.swift */; };
 		2A847A0A1CE652F80025D96B /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A847A091CE652F80025D96B /* RegisterViewController.swift */; };
 		2A847A0C1CE653E70025D96B /* DefaultButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A847A0B1CE653E70025D96B /* DefaultButton.swift */; };
 		2A847A0E1CE6540E0025D96B /* FormTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A847A0D1CE6540E0025D96B /* FormTextField.swift */; };
@@ -29,6 +37,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2A39622C1CE6932500B4FA0B /* CreateTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateTaskViewController.swift; sourceTree = "<group>"; };
+		2A39622E1CE693F500B4FA0B /* TaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskViewController.swift; sourceTree = "<group>"; };
+		2A3962301CE6945900B4FA0B /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+		2A3962321CE695A300B4FA0B /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		2A3962341CE69A0E00B4FA0B /* UsersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersViewController.swift; sourceTree = "<group>"; };
+		2A3962361CE69AD500B4FA0B /* UserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
+		2A3962391CE69C7900B4FA0B /* StringAttributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringAttributes.swift; sourceTree = "<group>"; };
+		2A39623B1CE69E3D00B4FA0B /* TaskTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
 		2A847A091CE652F80025D96B /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		2A847A0B1CE653E70025D96B /* DefaultButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultButton.swift; sourceTree = "<group>"; };
 		2A847A0D1CE6540E0025D96B /* FormTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormTextField.swift; sourceTree = "<group>"; };
@@ -66,6 +82,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2A3962381CE69C2B00B4FA0B /* Elements */ = {
+			isa = PBXGroup;
+			children = (
+				2A3962391CE69C7900B4FA0B /* StringAttributes.swift */,
+			);
+			path = Elements;
+			sourceTree = "<group>";
+		};
 		2A847A111CE6807C0025D96B /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -111,6 +135,7 @@
 				929B903B1CE6469B00F3B07B /* Assets.xcassets */,
 				929B903D1CE6469B00F3B07B /* LaunchScreen.storyboard */,
 				929B90401CE6469B00F3B07B /* Info.plist */,
+				2A3962381CE69C2B00B4FA0B /* Elements */,
 				2A847A111CE6807C0025D96B /* Models */,
 				F36C2E981CED0494307B3499 /* ViewControllers */,
 				F36C294A7DC57A252C811583 /* Views */,
@@ -142,6 +167,8 @@
 			children = (
 				2A847A0B1CE653E70025D96B /* DefaultButton.swift */,
 				2A847A0D1CE6540E0025D96B /* FormTextField.swift */,
+				2A3962361CE69AD500B4FA0B /* UserTableViewCell.swift */,
+				2A39623B1CE69E3D00B4FA0B /* TaskTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -155,6 +182,11 @@
 				2A847A091CE652F80025D96B /* RegisterViewController.swift */,
 				2A847A0F1CE669BD0025D96B /* KeyAuthViewController.swift */,
 				2A847A1A1CE6857F0025D96B /* TasksViewController.swift */,
+				2A39622C1CE6932500B4FA0B /* CreateTaskViewController.swift */,
+				2A39622E1CE693F500B4FA0B /* TaskViewController.swift */,
+				2A3962301CE6945900B4FA0B /* DashboardViewController.swift */,
+				2A3962321CE695A300B4FA0B /* SettingsViewController.swift */,
+				2A3962341CE69A0E00B4FA0B /* UsersViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -282,20 +314,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A847A171CE683740025D96B /* FirebaseModelProtocol.swift in Sources */,
+				2A3962311CE6945900B4FA0B /* DashboardViewController.swift in Sources */,
 				2A847A101CE669BD0025D96B /* KeyAuthViewController.swift in Sources */,
 				929B90351CE6469B00F3B07B /* AppDelegate.swift in Sources */,
 				2A847A0E1CE6540E0025D96B /* FormTextField.swift in Sources */,
+				2A3962331CE695A300B4FA0B /* SettingsViewController.swift in Sources */,
 				2A847A0A1CE652F80025D96B /* RegisterViewController.swift in Sources */,
 				F36C21AFC92793236841A605 /* BaseViewController.swift in Sources */,
 				F36C2C65FCE417958FE5B652 /* NavigationController.swift in Sources */,
 				F36C20EDA362DB6C34B5FEDE /* LoginViewController.swift in Sources */,
 				2A847A1B1CE6857F0025D96B /* TasksViewController.swift in Sources */,
 				2A847A191CE684030025D96B /* Model.swift in Sources */,
+				2A39622F1CE693F500B4FA0B /* TaskViewController.swift in Sources */,
+				2A39623C1CE69E3D00B4FA0B /* TaskTableViewCell.swift in Sources */,
 				2A847A131CE6809D0025D96B /* User.swift in Sources */,
 				2A847A151CE681E30025D96B /* ModelDictionaryProtocol.swift in Sources */,
 				F36C2A4B48A5B97AF3CCAA12 /* FirebaseManager.swift in Sources */,
+				2A3962371CE69AD500B4FA0B /* UserTableViewCell.swift in Sources */,
+				2A39623A1CE69C7900B4FA0B /* StringAttributes.swift in Sources */,
 				2A847A0C1CE653E70025D96B /* DefaultButton.swift in Sources */,
+				2A3962351CE69A0E00B4FA0B /* UsersViewController.swift in Sources */,
 				F36C23CADEB4416594E984F8 /* UserDefaultsManager.swift in Sources */,
+				2A39622D1CE6932500B4FA0B /* CreateTaskViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

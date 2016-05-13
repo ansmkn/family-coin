@@ -11,16 +11,16 @@ import Firebase
 class User : Model {
     let name: String
     let userId: String
-    let coints: Int
+    let coins: Int
     init(name: String, userId: String) {
         self.name = name
         self.userId = userId
-        self.coints = 0
+        self.coins = 0
     }
     
     override func attributes() -> [String: AnyObject] {
         return ["name" : self.name,
                 "userId": self.userId,
-                "coints": self.coints]
+                "coins": self.coins]
     }
 }
