@@ -1,0 +1,16 @@
+PODS:
+  - DZNEmptyDataSet (1.8)
+  - Firebase (2.5.1)
+  - SnapKit (0.15.0)
+
+DEPENDENCIES:
+  - DZNEmptyDataSet
+  - Firebase (>= 2.5.1)
+  - SnapKit (~> 0.15.0)
+
+SPEC CHECKSUMS:
+  DZNEmptyDataSet: d2351b2e8daefa40433ef292e246e21f6be31a7b
+  Firebase: 3565ea88b830f28f2c77ecc524622bc71a20d085
+  SnapKit: 4962eed2ee18e48cbd2b2292fffc57efe7235f87
+
+COCOAPODS: 0.39.0
