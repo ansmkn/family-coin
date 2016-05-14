@@ -27,13 +27,7 @@ class SettingsViewController: BaseViewController {
         tableView.snp_makeConstraints {
             $0.edges.equalTo(0)
         }
-//        
-//        array.append({
-//            let cell = AboutMFCTitleAddressCell(style: .Default, reuseIdentifier: nil)
-//            cell.titleLabel.text = mfcModel.name
-//            cell.addressLabel.text = mfcModel.cntAddress
-//            return cell
-//            }())
+        
         
         dataSource.append({
             let cell = UITableViewCell(style: .Default, reuseIdentifier: nil)

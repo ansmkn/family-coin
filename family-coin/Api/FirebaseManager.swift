@@ -10,6 +10,7 @@ import Firebase
 struct Urls {
     static let baseUrlString = "https://blinding-torch-7229.firebaseio.com"
     static let usersUrlString = "users"
+    static let tasksUrlString = "tasks"
 }
 
 class FirebaseManager {
@@ -43,5 +44,21 @@ class FirebaseManager {
     func userUrl(userId: String) -> Firebase {
         return usersUrl.childByAppendingPath(userId)
     }
+    
+    private var _tasksUrl: Firebase!
+    var tasksUrl: Firebase {
+        get {
+            if _tasksUrl == nil {
+                _tasksUrl = self.homeUrl.childByAppendingPath(Urls.tasksUrlString)
+            }
+            return _tasksUrl
+        }
+    }
+    
+    func taskUrl(taskId: String) -> Firebase {
+        return usersUrl.childByAppendingPath(taskId)
+    }
+    
+    
 
 }

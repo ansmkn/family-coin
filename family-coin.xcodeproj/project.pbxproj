@@ -29,6 +29,7 @@
 		929B903A1CE6469B00F3B07B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 929B90381CE6469B00F3B07B /* Main.storyboard */; };
 		929B903C1CE6469B00F3B07B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 929B903B1CE6469B00F3B07B /* Assets.xcassets */; };
 		929B903F1CE6469B00F3B07B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 929B903D1CE6469B00F3B07B /* LaunchScreen.storyboard */; };
+		92C1A85A1CE73B2F001F4CAE /* TextFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C1A8591CE73B2F001F4CAE /* TextFieldTableViewCell.swift */; };
 		F36C20EDA362DB6C34B5FEDE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36C2088A86E0A0DED195AEA /* LoginViewController.swift */; };
 		F36C21AFC92793236841A605 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36C2CD811F7299B8D2C3A5D /* BaseViewController.swift */; };
 		F36C23CADEB4416594E984F8 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36C2BC5F2A4EC0ED9464D0C /* UserDefaultsManager.swift */; };
@@ -61,6 +62,7 @@
 		929B903B1CE6469B00F3B07B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		929B903E1CE6469B00F3B07B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		929B90401CE6469B00F3B07B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		92C1A8591CE73B2F001F4CAE /* TextFieldTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldTableViewCell.swift; sourceTree = "<group>"; };
 		C6ABDE96B4C407A70C12ACFC /* Pods_family_coin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_family_coin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CED669FA6EA46EB42C31D5C5 /* Pods-family-coin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-family-coin.release.xcconfig"; path = "Pods/Target Support Files/Pods-family-coin/Pods-family-coin.release.xcconfig"; sourceTree = "<group>"; };
 		F36C2088A86E0A0DED195AEA /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 				2A847A0D1CE6540E0025D96B /* FormTextField.swift */,
 				2A3962361CE69AD500B4FA0B /* UserTableViewCell.swift */,
 				2A39623B1CE69E3D00B4FA0B /* TaskTableViewCell.swift */,
+				92C1A8591CE73B2F001F4CAE /* TextFieldTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -316,6 +319,7 @@
 				2A847A171CE683740025D96B /* FirebaseModelProtocol.swift in Sources */,
 				2A3962311CE6945900B4FA0B /* DashboardViewController.swift in Sources */,
 				2A847A101CE669BD0025D96B /* KeyAuthViewController.swift in Sources */,
+				92C1A85A1CE73B2F001F4CAE /* TextFieldTableViewCell.swift in Sources */,
 				929B90351CE6469B00F3B07B /* AppDelegate.swift in Sources */,
 				2A847A0E1CE6540E0025D96B /* FormTextField.swift in Sources */,
 				2A3962331CE695A300B4FA0B /* SettingsViewController.swift in Sources */,
