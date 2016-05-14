@@ -10,6 +10,7 @@ import UIKit
 
 class CreateTaskViewController: BaseViewController {
     
+    var task: Task?
     private var dataSource: [UITableViewCell] = []
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
@@ -25,20 +26,39 @@ class CreateTaskViewController: BaseViewController {
         return tableView
     }()
     
+    var keyboardManager: KeyboardManager?
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Create Task"
         
         self.view.addSubview(tableView)
         tableView.snp_makeConstraints {
             $0.edges.equalTo(0)
         }
         
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Create", style: .Plain, target: self,
-                                                                 action: #selector(CreateTaskViewController.didCreateButtonTapped(_:)))
-        
+        self.keyboardManager = KeyboardManager(scrollView: tableView)
+        let tap = UITapGestureRecognizer(target: self, action: #selector(LoginViewController.didUserTapScreen))
+        self.view.addGestureRecognizer(tap)
     }
     
+    func didUserTapScreen() {
+        titleTextView?.resignFirstResponder()
+        descriptionTextView?.resignFirstResponder()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.title = task != nil ? "Edit Task" : "Create Task"
+
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: task != nil ? "Save" : "Create", style: .Plain, target: self,
+                                                                 action: #selector(CreateTaskViewController.didCreateButtonTapped(_:)))
+        
+        keyboardManager?.subscibeOnKeyboardNotification()
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        keyboardManager?.unsubscribeFromKeyboardNotification()
+    }
     
     var sliderCell : TaskCostEditorCell? {
         willSet {
@@ -52,11 +72,11 @@ class CreateTaskViewController: BaseViewController {
         sliderCell?.label.text = String(Int(slider.value))
     }
     
-    var textField: UITextField?
-    var textView: UITextView?
+    var titleTextView: UITextView?
+    var descriptionTextView: UITextView?
     
     func didCreateButtonTapped(button: UIBarButtonItem) {
-        guard let tf = textField, let tv = textView, let sl = sliderCell?.label else {
+        guard let tf = titleTextView, let tv = descriptionTextView, let sl = sliderCell?.label else {
             self.showError(nil)
             return
         }
@@ -66,12 +86,12 @@ class CreateTaskViewController: BaseViewController {
             return
         }
         
-        guard let title = tf.text where !title.isEmpty else {
+        guard let title = tf.text?.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()) where !title.isEmpty else {
             self.showMessage(nil, message: "Title field is not filled")
             return
         }
         
-        guard let description = tv.text where !description.isEmpty else {
+        guard let description = tv.text?.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()) where !description.isEmpty else {
             self.showMessage(nil, message: "Description field is not filled")
             return
         }
@@ -81,11 +101,19 @@ class CreateTaskViewController: BaseViewController {
     }
     
     func createTask(title: String, description: String, cost: String) {
-        let task = Task(title: title, description: description, cost: Int(cost)!, isComplete: false)
         
-        let ref = firebase.tasksUrl.childByAutoId()
-        task.ref = ref
-        ref.setValue(task.attributes())
+        if task != nil {
+            task?.title = title
+            task?.description = description
+            task?.cost = Int(cost)
+            firebase.tasksUrl.childByAppendingPath(task!.key).setValue(task!.attributes())
+        } else {
+            let newTask = Task(title: title, description: description, cost: Int(cost)!, isComplete: false)
+            firebase.tasksUrl.childByAutoId().setValue(newTask.attributes())
+        }
+        
+        
+        
         self.navigationController?.popViewControllerAnimated(true)
     }
 }
@@ -95,29 +123,44 @@ extension CreateTaskViewController: UITableViewDataSource, UITableViewDelegate {
         switch indexPath.row {
         case 0:
             
-            let cell = tableView.dequeueReusableCellWithIdentifier(String(TextFieldTableViewCell),
-                                                                   forIndexPath: indexPath) as! TextFieldTableViewCell
+            let cell = tableView.dequeueReusableCellWithIdentifier(String(TaskDescriptionCell),
+                                                                   forIndexPath: indexPath) as! TaskDescriptionCell
             
-            cell.textField.placeholder = "Title";
-            textField = cell.textField
+            cell.label.text = "Task title"
+            titleTextView = cell.textView
+            if task != nil {
+                cell.textView?.text = task!.title
+            }
+            cell.textView?.scrollEnabled = false
+            cell.textView?.textContainer.maximumNumberOfLines = 1
+            cell.textView?.textContainer.lineBreakMode = .ByTruncatingTail;
+            cell.textView?.delegate = self
             return cell
         case 1:
             let cell = tableView.dequeueReusableCellWithIdentifier(String(TaskDescriptionCell),
                                                                    forIndexPath: indexPath) as! TaskDescriptionCell
             cell.label.text = "Task description"
-            textView = cell.textView
+            descriptionTextView = cell.textView
+
+            if task != nil {
+                cell.textView?.text = task!.description
+            }
+            cell.textView?.scrollEnabled = false
+            cell.textView?.textContainer.maximumNumberOfLines = 6
+            cell.textView?.delegate = self
             return cell
         default:
             
             let cell = tableView.dequeueReusableCellWithIdentifier(String(TaskCostEditorCell),
                                                                    forIndexPath: indexPath) as! TaskCostEditorCell
             sliderCell = cell
+            if task != nil {
+                sliderCell?.slider.value = Float(task!.cost)
+            }
             didSliderMove(cell.slider)
             return cell
         }
     }
-    
-    
     
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -127,7 +170,7 @@ extension CreateTaskViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         switch indexPath.row {
         case 0:
-            return 56
+            return 60
         case 1:
             return 150
         default:
@@ -135,3 +178,21 @@ extension CreateTaskViewController: UITableViewDataSource, UITableViewDelegate {
         }
     }
 }
+
+extension CreateTaskViewController: UITextViewDelegate {
+    func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
+        if textView == titleTextView {
+            if text == "\n" {
+                descriptionTextView?.becomeFirstResponder()
+                return false
+            }
+        }
+        
+        
+        return true
+        //
+    }
+    
+}
+
+

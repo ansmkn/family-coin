@@ -99,11 +99,30 @@
                     </view>
                     <connections>
                         <segue destination="Ppm-QY-g73" kind="show" identifier="SETTINGS_TO_USERS" id="dEo-QA-hdB"/>
+                        <segue destination="Lcn-Y1-9ra" kind="show" identifier="TO_PERIPHERAL" id="kSK-hQ-JWO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yCn-DM-FSn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2775" y="-720"/>
+        </scene>
+        <!--Bluetooth Peripheral View Controller-->
+        <scene sceneID="SDH-ys-diz">
+            <objects>
+                <viewController id="Lcn-Y1-9ra" customClass="BluetoothPeripheralViewController" customModule="family_coin" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Cr9-Ps-Ilo"/>
+                        <viewControllerLayoutGuide type="bottom" id="7Jc-zT-tP8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ys0-jc-V3k">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dgh-tz-SFj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3271" y="-1098"/>
         </scene>
         <!--Users View Controller-->
         <scene sceneID="c1o-J6-dbk">
@@ -189,7 +208,7 @@
                                         <state key="normal" title="I'm a child"/>
                                         <connections>
                                             <action selector="childUser:" destination="NH0-o4-6g5" eventType="touchUpInside" id="3r0-Vy-1MG"/>
-                                            <segue destination="Rka-w4-udg" kind="show" id="YIM-86-533"/>
+                                            <segue destination="lrK-7S-jiT" kind="show" id="XPw-MT-VyI"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -254,6 +273,11 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="6ai-fK-gPp"/>
+                                    </mask>
+                                </variation>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9hA-f2-3gM" customClass="FormTextField" customModule="family_coin" customModuleProvider="target">
                                 <rect key="frame" x="20" y="187" width="280" height="40"/>
@@ -263,6 +287,11 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="y0o-LM-KIL"/>
+                                    </mask>
+                                </variation>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oed-1r-7s3" customClass="DefaultButton" customModule="family_coin" customModuleProvider="target">
                                 <rect key="frame" x="20" y="520" width="57" height="40"/>
@@ -304,11 +333,15 @@
                         <constraints>
                             <constraint firstItem="3FX-BQ-xsI" firstAttribute="top" secondItem="oed-1r-7s3" secondAttribute="bottom" constant="8" id="15m-Lf-ufX"/>
                             <constraint firstItem="9hA-f2-3gM" firstAttribute="top" secondItem="lWS-Tm-kQ5" secondAttribute="bottom" constant="8" id="1cH-Zo-1zt"/>
+                            <constraint firstItem="lWS-Tm-kQ5" firstAttribute="leading" secondItem="9iY-v5-Rt1" secondAttribute="leading" constant="20" id="75R-fe-Frs"/>
                             <constraint firstItem="OiI-a3-Qb8" firstAttribute="top" secondItem="vuT-cP-erW" secondAttribute="bottom" constant="24" id="9iC-nl-lrR"/>
                             <constraint firstAttribute="trailing" secondItem="JTM-Ff-HNx" secondAttribute="trailing" constant="20" id="Ci2-jo-9Hp"/>
                             <constraint firstItem="oed-1r-7s3" firstAttribute="leading" secondItem="9iY-v5-Rt1" secondAttribute="leading" constant="20" id="O8B-37-yVW"/>
+                            <constraint firstAttribute="trailing" secondItem="9hA-f2-3gM" secondAttribute="trailing" constant="20" id="O8B-vs-ype"/>
                             <constraint firstItem="lWS-Tm-kQ5" firstAttribute="top" secondItem="OiI-a3-Qb8" secondAttribute="bottom" constant="61" id="PZQ-eV-vuR"/>
+                            <constraint firstItem="9hA-f2-3gM" firstAttribute="leading" secondItem="9iY-v5-Rt1" secondAttribute="leading" constant="20" id="QrK-1y-dzc"/>
                             <constraint firstItem="oed-1r-7s3" firstAttribute="centerX" secondItem="9iY-v5-Rt1" secondAttribute="centerX" id="Qx5-fu-Cfr"/>
+                            <constraint firstAttribute="trailing" secondItem="lWS-Tm-kQ5" secondAttribute="trailing" constant="20" id="Rba-tp-3ah"/>
                             <constraint firstItem="lWS-Tm-kQ5" firstAttribute="centerX" secondItem="9iY-v5-Rt1" secondAttribute="centerX" id="UF9-Ex-rJC"/>
                             <constraint firstItem="9hA-f2-3gM" firstAttribute="centerX" secondItem="9iY-v5-Rt1" secondAttribute="centerX" id="Z2P-Wy-qB3"/>
                             <constraint firstItem="lWS-Tm-kQ5" firstAttribute="top" secondItem="OiI-a3-Qb8" secondAttribute="bottom" constant="24" id="cT3-Sk-fS5"/>
@@ -339,6 +372,27 @@
             </objects>
             <point key="canvasLocation" x="1451" y="-892"/>
         </scene>
+        <!--Bluetooth View Controller-->
+        <scene sceneID="piL-eT-KZC">
+            <objects>
+                <viewController id="lrK-7S-jiT" customClass="BluetoothViewController" customModule="family_coin" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ad3-3M-icK"/>
+                        <viewControllerLayoutGuide type="bottom" id="baz-2r-iPU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ByA-Iu-jUd">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <segue destination="Rka-w4-udg" kind="show" identifier="BLUETOOTH_TO_AUTH" id="fDN-Fv-WG3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5P6-dM-96K" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1157" y="802"/>
+        </scene>
         <!--Key Auth View Controller-->
         <scene sceneID="Ma0-MR-nPU">
             <objects>
@@ -351,60 +405,36 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Key" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VyC-wr-WFa" customClass="FormTextField" customModule="family_coin" customModuleProvider="target">
-                                <rect key="frame" x="20" y="58" width="280" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="S66-S7-kQ1"/>
-                                    <constraint firstAttribute="width" constant="280" id="SPn-WQ-lmt"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tQ4-UD-ttn" customClass="FormTextField" customModule="family_coin" customModuleProvider="target">
-                                <rect key="frame" x="20" y="106" width="280" height="40"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tQ4-UD-ttn" customClass="FormTextField" customModule="family_coin" customModuleProvider="target">
+                                <rect key="frame" x="20" y="90" width="280" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Mud-39-7Zb"/>
                                     <constraint firstAttribute="width" constant="280" id="apr-vJ-Puj"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="apr-vJ-Puj"/>
+                                    </mask>
+                                </variation>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GkY-H4-UlF" customClass="DefaultButton" customModule="family_coin" customModuleProvider="target">
-                                <rect key="frame" x="100" y="154" width="120" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="He3-dB-i7U"/>
-                                    <constraint firstAttribute="width" constant="120" id="yHb-Os-J1E"/>
-                                </constraints>
-                                <state key="normal" title="Enter"/>
-                                <connections>
-                                    <action selector="enterButton:" destination="Rka-w4-udg" eventType="touchUpInside" id="2Lu-cK-xHc"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="tQ4-UD-ttn" firstAttribute="top" secondItem="VyC-wr-WFa" secondAttribute="bottom" constant="8" id="4v9-xu-eKd"/>
-                            <constraint firstItem="GkY-H4-UlF" firstAttribute="centerX" secondItem="kBc-9v-Amv" secondAttribute="centerX" id="7bx-SO-eI1"/>
-                            <constraint firstItem="VyC-wr-WFa" firstAttribute="top" secondItem="1wi-Rd-piI" secondAttribute="bottom" constant="38" id="KMx-gF-Wd0"/>
-                            <constraint firstItem="VyC-wr-WFa" firstAttribute="centerX" secondItem="kBc-9v-Amv" secondAttribute="centerX" id="Mek-rn-IRS"/>
-                            <constraint firstItem="GkY-H4-UlF" firstAttribute="top" secondItem="VyC-wr-WFa" secondAttribute="bottom" constant="8" id="lCr-wJ-bc6"/>
+                            <constraint firstAttribute="trailing" secondItem="tQ4-UD-ttn" secondAttribute="trailing" constant="20" id="7fx-MZ-yTp"/>
+                            <constraint firstItem="tQ4-UD-ttn" firstAttribute="leading" secondItem="kBc-9v-Amv" secondAttribute="leading" constant="20" id="rOv-Ro-ljF"/>
                             <constraint firstItem="tQ4-UD-ttn" firstAttribute="centerX" secondItem="kBc-9v-Amv" secondAttribute="centerX" id="s8w-VV-F0b"/>
-                            <constraint firstItem="GkY-H4-UlF" firstAttribute="top" secondItem="tQ4-UD-ttn" secondAttribute="bottom" constant="8" id="sD7-Di-0Gc"/>
+                            <constraint firstItem="tQ4-UD-ttn" firstAttribute="top" secondItem="1wi-Rd-piI" secondAttribute="bottom" constant="26" id="uBk-Ix-M8W"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="lCr-wJ-bc6"/>
-                            </mask>
-                        </variation>
                     </view>
                     <connections>
-                        <outlet property="keyTextField" destination="VyC-wr-WFa" id="ZFa-Rb-Wmv"/>
                         <outlet property="nameTextField" destination="tQ4-UD-ttn" id="zQu-s3-SIU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NT0-U1-hRM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1451" y="778"/>
+            <point key="canvasLocation" x="1708" y="802"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="oBP-xs-jza">
@@ -426,6 +456,11 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="GvL-4X-KTx"/>
+                                    </mask>
+                                </variation>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Reply password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fjg-m6-2Ln" customClass="FormTextField" customModule="family_coin" customModuleProvider="target">
                                 <rect key="frame" x="20" y="186" width="280" height="40"/>
@@ -435,6 +470,11 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Lpz-tu-b9k"/>
+                                    </mask>
+                                </variation>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5xy-XT-r2o" customClass="FormTextField" customModule="family_coin" customModuleProvider="target">
                                 <rect key="frame" x="20" y="90" width="280" height="40"/>
@@ -444,18 +484,29 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="9Oh-Om-Uxo"/>
+                                    </mask>
+                                </variation>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Fjg-m6-2Ln" firstAttribute="leading" secondItem="MeG-jE-pnd" secondAttribute="leading" constant="20" id="4bo-yQ-Qxx"/>
+                            <constraint firstAttribute="trailing" secondItem="5xy-XT-r2o" secondAttribute="trailing" constant="20" id="52D-mL-6rj"/>
                             <constraint firstItem="5xy-XT-r2o" firstAttribute="centerX" secondItem="MeG-jE-pnd" secondAttribute="centerX" id="BNf-U1-MpU"/>
                             <constraint firstItem="5xy-XT-r2o" firstAttribute="centerY" secondItem="MeG-jE-pnd" secondAttribute="centerY" constant="-100" id="JoL-0K-QAp"/>
+                            <constraint firstAttribute="trailing" secondItem="u3S-yB-epX" secondAttribute="trailing" constant="20" id="LB5-yd-TIT"/>
                             <constraint firstItem="u3S-yB-epX" firstAttribute="top" secondItem="5xy-XT-r2o" secondAttribute="bottom" constant="8" id="LN2-FW-ICP"/>
                             <constraint firstItem="Fjg-m6-2Ln" firstAttribute="top" secondItem="u3S-yB-epX" secondAttribute="bottom" constant="8" id="YwZ-4Y-kOz"/>
+                            <constraint firstAttribute="trailing" secondItem="Fjg-m6-2Ln" secondAttribute="trailing" constant="20" id="bW8-E8-P68"/>
                             <constraint firstItem="5xy-XT-r2o" firstAttribute="top" secondItem="arT-ac-LJI" secondAttribute="bottom" constant="26" id="kbg-AZ-uHx"/>
                             <constraint firstItem="u3S-yB-epX" firstAttribute="centerX" secondItem="MeG-jE-pnd" secondAttribute="centerX" id="o2o-3a-BIJ"/>
                             <constraint firstItem="u3S-yB-epX" firstAttribute="top" secondItem="5xy-XT-r2o" secondAttribute="bottom" constant="8" id="obl-xq-1e9"/>
+                            <constraint firstItem="u3S-yB-epX" firstAttribute="leading" secondItem="MeG-jE-pnd" secondAttribute="leading" constant="20" id="sFK-Yu-9oj"/>
                             <constraint firstItem="Fjg-m6-2Ln" firstAttribute="centerX" secondItem="MeG-jE-pnd" secondAttribute="centerX" id="usI-RV-Stb"/>
+                            <constraint firstItem="5xy-XT-r2o" firstAttribute="leading" secondItem="MeG-jE-pnd" secondAttribute="leading" constant="20" id="ztU-Nc-Ksa"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">

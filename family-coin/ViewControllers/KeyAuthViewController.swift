@@ -6,28 +6,32 @@
 //  Copyright © 2016 Sea. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class KeyAuthViewController: BaseViewController {
-    
+    var key: String?
     @IBOutlet weak var nameTextField: FormTextField!
-    @IBOutlet weak var keyTextField: FormTextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Bluetooth"
+        self.title = "New user"
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Complete", style: .Plain, target: self,
+                                                                 action: #selector(KeyAuthViewController.enterButton(_:)))
+        
+        self.navigationItem.backBarButtonItem = nil
     }
     
     @IBAction func enterButton(sender: AnyObject) {
-        guard let key = keyTextField.text where !key.isEmpty else {
-            self.showMessage(nil, message: "Fill key field")
-            return;
-        }
         
         guard let name = nameTextField.text where !name.isEmpty else {
             self.showMessage(nil, message: "Fill name field")
             return;
         }
         
+        guard let key = key where !key.isEmpty else {
+            self.showError(nil)
+            self.toStartPage()
+            return;
+        }
         
         let ref = self.firebase.baseUrl.childByAppendingPath(key)
         self.activityIndicatorView.startAnimating()

@@ -9,10 +9,10 @@
 import UIKit
 
 class Task: Model {
-    let title: String
-    let description: String
-    let cost: Int
-    let isComplete: Bool
+    var title: String!
+    var description: String!
+    var cost: Int!
+    var isComplete: Bool!
     var key: String?
     var userId: String?
     var userName: String?

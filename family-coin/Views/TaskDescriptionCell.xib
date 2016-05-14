@@ -16,26 +16,32 @@
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fKQ-mr-3pc" customClass="TitleLabel" customModule="family_coin" customModuleProvider="target">
                         <rect key="frame" x="21" y="8" width="279" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="3rO-Pv-V2j">
-                        <rect key="frame" x="20" y="37" width="280" height="141"/>
+                        <rect key="frame" x="20" y="29" width="280" height="169"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
                     </textView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="fKQ-mr-3pc" firstAttribute="leading" secondItem="ruL-Xc-U8a" secondAttribute="leading" constant="21" id="BgJ-NZ-PdN"/>
                     <constraint firstAttribute="trailing" secondItem="fKQ-mr-3pc" secondAttribute="trailing" constant="20" id="LI1-ca-3UG"/>
-                    <constraint firstAttribute="bottom" secondItem="3rO-Pv-V2j" secondAttribute="bottom" constant="20" id="OP2-dh-tWB"/>
+                    <constraint firstAttribute="bottom" secondItem="3rO-Pv-V2j" secondAttribute="bottom" id="OP2-dh-tWB"/>
                     <constraint firstItem="3rO-Pv-V2j" firstAttribute="top" secondItem="fKQ-mr-3pc" secondAttribute="bottom" constant="8" id="PGK-LQ-uvW"/>
                     <constraint firstItem="3rO-Pv-V2j" firstAttribute="leading" secondItem="ruL-Xc-U8a" secondAttribute="leading" constant="20" id="ZW4-n2-IEP"/>
                     <constraint firstItem="fKQ-mr-3pc" firstAttribute="top" secondItem="ruL-Xc-U8a" secondAttribute="top" constant="8" id="eXS-BH-sIf"/>
                     <constraint firstAttribute="trailing" secondItem="3rO-Pv-V2j" secondAttribute="trailing" constant="20" id="kSP-Dy-BMU"/>
+                    <constraint firstItem="3rO-Pv-V2j" firstAttribute="top" secondItem="fKQ-mr-3pc" secondAttribute="bottom" id="rhx-ez-nK4"/>
                 </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="PGK-LQ-uvW"/>
+                    </mask>
+                </variation>
             </tableViewCellContentView>
             <connections>
                 <outlet property="label" destination="fKQ-mr-3pc" id="LVA-P5-j10"/>

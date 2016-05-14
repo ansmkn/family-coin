@@ -10,9 +10,20 @@ import UIKit
 
 class DashboardViewController: BaseViewController {
     
+    var userId: String?
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Dashboard"
+        self.title = "Wish list"
     }
-
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if userId == nil {
+            userId = UserDefaultsManager.sharedInstance.userId
+        }
+    }
+    
+    
+    
 }

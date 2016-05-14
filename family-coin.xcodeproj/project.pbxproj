@@ -35,6 +35,12 @@
 		2A847A171CE683740025D96B /* FirebaseModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A847A161CE683740025D96B /* FirebaseModelProtocol.swift */; };
 		2A847A191CE684030025D96B /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A847A181CE684030025D96B /* Model.swift */; };
 		2A847A1B1CE6857F0025D96B /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A847A1A1CE6857F0025D96B /* TasksViewController.swift */; };
+		2AB245F11CE7B1C200CE1EF1 /* CenterBluetoothManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB245F01CE7B1C200CE1EF1 /* CenterBluetoothManager.swift */; };
+		2AB245F31CE7B1DC00CE1EF1 /* PeripheralBluetoothManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB245F21CE7B1DC00CE1EF1 /* PeripheralBluetoothManager.swift */; };
+		2AB245F51CE7B3BF00CE1EF1 /* CoreBluetoothDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB245F41CE7B3BF00CE1EF1 /* CoreBluetoothDefinition.swift */; };
+		2AB245F71CE7B93300CE1EF1 /* BluetoothViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB245F61CE7B93300CE1EF1 /* BluetoothViewController.swift */; };
+		2AB245F91CE7BEF600CE1EF1 /* BluetoothPeripheralViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB245F81CE7BEF600CE1EF1 /* BluetoothPeripheralViewController.swift */; };
+		2AB245FB1CE7C65200CE1EF1 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AB245FA1CE7C65200CE1EF1 /* CoreBluetooth.framework */; };
 		7FFDB51AFBC50A37D4AD71FC /* Pods_family_coin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6ABDE96B4C407A70C12ACFC /* Pods_family_coin.framework */; };
 		929B90351CE6469B00F3B07B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929B90341CE6469B00F3B07B /* AppDelegate.swift */; };
 		929B903A1CE6469B00F3B07B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 929B90381CE6469B00F3B07B /* Main.storyboard */; };
@@ -77,6 +83,12 @@
 		2A847A161CE683740025D96B /* FirebaseModelProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseModelProtocol.swift; sourceTree = "<group>"; };
 		2A847A181CE684030025D96B /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		2A847A1A1CE6857F0025D96B /* TasksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
+		2AB245F01CE7B1C200CE1EF1 /* CenterBluetoothManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CenterBluetoothManager.swift; sourceTree = "<group>"; };
+		2AB245F21CE7B1DC00CE1EF1 /* PeripheralBluetoothManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeripheralBluetoothManager.swift; sourceTree = "<group>"; };
+		2AB245F41CE7B3BF00CE1EF1 /* CoreBluetoothDefinition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreBluetoothDefinition.swift; sourceTree = "<group>"; };
+		2AB245F61CE7B93300CE1EF1 /* BluetoothViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BluetoothViewController.swift; sourceTree = "<group>"; };
+		2AB245F81CE7BEF600CE1EF1 /* BluetoothPeripheralViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BluetoothPeripheralViewController.swift; sourceTree = "<group>"; };
+		2AB245FA1CE7C65200CE1EF1 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		627CA22ABC58DBFE889F0608 /* Pods-family-coin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-family-coin.debug.xcconfig"; path = "Pods/Target Support Files/Pods-family-coin/Pods-family-coin.debug.xcconfig"; sourceTree = "<group>"; };
 		929B90311CE6469A00F3B07B /* family-coin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "family-coin.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		929B90341CE6469B00F3B07B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -99,6 +111,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2AB245FB1CE7C65200CE1EF1 /* CoreBluetooth.framework in Frameworks */,
 				7FFDB51AFBC50A37D4AD71FC /* Pods_family_coin.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -145,6 +158,7 @@
 		36B89832700E5F0233EDDB88 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2AB245FA1CE7C65200CE1EF1 /* CoreBluetooth.framework */,
 				C6ABDE96B4C407A70C12ACFC /* Pods_family_coin.framework */,
 			);
 			name = Frameworks;
@@ -199,6 +213,9 @@
 			children = (
 				F36C27DE485DAF2ED2A80FDF /* FirebaseManager.swift */,
 				F36C2BC5F2A4EC0ED9464D0C /* UserDefaultsManager.swift */,
+				2AB245F01CE7B1C200CE1EF1 /* CenterBluetoothManager.swift */,
+				2AB245F21CE7B1DC00CE1EF1 /* PeripheralBluetoothManager.swift */,
+				2AB245F41CE7B3BF00CE1EF1 /* CoreBluetoothDefinition.swift */,
 			);
 			path = Api;
 			sourceTree = "<group>";
@@ -231,6 +248,8 @@
 				2A3962321CE695A300B4FA0B /* SettingsViewController.swift */,
 				2A3962341CE69A0E00B4FA0B /* UsersViewController.swift */,
 				2A2059531CE779CC00EA8097 /* StartViewController.swift */,
+				2AB245F61CE7B93300CE1EF1 /* BluetoothViewController.swift */,
+				2AB245F81CE7BEF600CE1EF1 /* BluetoothPeripheralViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -363,6 +382,7 @@
 			files = (
 				2A2059541CE779CC00EA8097 /* StartViewController.swift in Sources */,
 				2A20594E1CE7572000EA8097 /* Task.swift in Sources */,
+				2AB245F51CE7B3BF00CE1EF1 /* CoreBluetoothDefinition.swift in Sources */,
 				2A847A171CE683740025D96B /* FirebaseModelProtocol.swift in Sources */,
 				2A3962311CE6945900B4FA0B /* DashboardViewController.swift in Sources */,
 				2A847A101CE669BD0025D96B /* KeyAuthViewController.swift in Sources */,
@@ -370,19 +390,23 @@
 				92C1A85A1CE73B2F001F4CAE /* TextFieldTableViewCell.swift in Sources */,
 				929B90351CE6469B00F3B07B /* AppDelegate.swift in Sources */,
 				2A847A0E1CE6540E0025D96B /* FormTextField.swift in Sources */,
+				2AB245F11CE7B1C200CE1EF1 /* CenterBluetoothManager.swift in Sources */,
 				2A3962331CE695A300B4FA0B /* SettingsViewController.swift in Sources */,
 				2A847A0A1CE652F80025D96B /* RegisterViewController.swift in Sources */,
 				F36C21AFC92793236841A605 /* BaseViewController.swift in Sources */,
 				F36C2C65FCE417958FE5B652 /* NavigationController.swift in Sources */,
 				2A20594B1CE7518900EA8097 /* TaskCostEditorCell.swift in Sources */,
 				F36C20EDA362DB6C34B5FEDE /* LoginViewController.swift in Sources */,
+				2AB245F71CE7B93300CE1EF1 /* BluetoothViewController.swift in Sources */,
 				2A847A1B1CE6857F0025D96B /* TasksViewController.swift in Sources */,
 				2A847A191CE684030025D96B /* Model.swift in Sources */,
 				2A39622F1CE693F500B4FA0B /* TaskViewController.swift in Sources */,
 				2A39623C1CE69E3D00B4FA0B /* TaskTableViewCell.swift in Sources */,
 				2A847A131CE6809D0025D96B /* User.swift in Sources */,
+				2AB245F91CE7BEF600CE1EF1 /* BluetoothPeripheralViewController.swift in Sources */,
 				2A045BEB1CE7431800F287E4 /* KeyboardManagerProtocol.swift in Sources */,
 				2A847A151CE681E30025D96B /* ModelDictionaryProtocol.swift in Sources */,
+				2AB245F31CE7B1DC00CE1EF1 /* PeripheralBluetoothManager.swift in Sources */,
 				F36C2A4B48A5B97AF3CCAA12 /* FirebaseManager.swift in Sources */,
 				2A3962371CE69AD500B4FA0B /* UserTableViewCell.swift in Sources */,
 				2A39623A1CE69C7900B4FA0B /* StringAttributes.swift in Sources */,

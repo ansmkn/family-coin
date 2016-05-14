@@ -74,11 +74,11 @@ class TasksViewController: BaseViewController {
     }
     
     func configureNavigationBarForClient() {
-        self.firebase.userUrl?.observeEventType(.Value, withBlock: { snapshot in
+        self.firebase.userUrl?.childByAppendingPath("coins").observeEventType(.Value, withBlock: { snapshot in
             if snapshot.value is NSNull {
                 return
             }
-            let coins = snapshot.value["coins"] as! Int
+            let coins = snapshot.value as! Int
             self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: String(coins) + " F", style: .Plain, target: self, action: #selector(TasksViewController.toDashboard))
             
         })
@@ -102,22 +102,14 @@ class TasksViewController: BaseViewController {
         self.performSegueWithIdentifier("TASKS_TO_SETTINGS", sender: nil)
     }
     
-    func toTask(index: Int) {
-        
-    }
-    
     func setTask(task: Task, isComplete: Bool) {
+        var value = task.attributes()
         if isClient {
-            var value = task.attributes()
-            
-            value["isComplete"] = isComplete
             value["userName"] = UserDefaultsManager.sharedInstance.userName
             value["userId"] = UserDefaultsManager.sharedInstance.userId
-            
-            task.ref?.setValue(value)
-        } else {
-            task.ref?.setValue(["isComplete": isComplete])
         }
+        value["isComplete"] = isComplete
+        task.ref?.setValue(value)
     }
     
     func deleteTask(task: Task, index: Int) {
@@ -127,17 +119,33 @@ class TasksViewController: BaseViewController {
     }
     
     func editTask(task: Task) {
-        
+        self.performSegueWithIdentifier("TASKS_TO_CREATE", sender: task)
 //        task.ref?.delete(nil)
     }
     
     func acceptTask(task: Task) {
         
+        let ref = firebase.usersUrl.childByAppendingPath(task.userId!)
+        let cost = task.cost
+        
+        ref.observeSingleEventOfType(.Value, withBlock:  { snapshot in
+            let user = User(attributes: snapshot.value as! [String: AnyObject])
+            self.firebase.setCoins(cost + user.coins, toUserWithUserId: user.userId)
+        })
+        
+        task.ref?.removeValue()
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "TASKS_TO_CREATE" {
+            let vc = segue.destinationViewController as! CreateTaskViewController
+            vc.task = sender as? Task
+        }
     }
 }
 
@@ -151,33 +159,36 @@ extension TasksViewController: UITableViewDataSource, UITableViewDelegate {
         cell.costLabel.text = String(task.cost)
         
         cell.nameLabel.hidden = task.isComplete == true
-        if task.isComplete {
+        if (task.isComplete != nil) {
             cell.statusLabel.textColor = UIColor.greenColor()
-            cell.statusLabel.text = "Complete"
+            cell.statusLabel.text = "Completed"
             if let name = task.userName {
                 cell.nameLabel.text = name
             }
         } else {
             cell.statusLabel.textColor = UIColor.grayColor()
-            cell.statusLabel.text = "Pending"
+            if let ui = task.userId where ui == UserDefaultsManager.sharedInstance.userId {
+                cell.statusLabel.text = "Rejected"
+            } else {
+                cell.statusLabel.text = "Pending"
+            }
         }
-
         
         if isClient {
             cell.rightButtons = [
-                MGSwipeButton(title: task.isComplete ? "Eject" : "Complete", backgroundColor: UIColor.greenColor(), callback: { (cell) -> Bool in
+                MGSwipeButton(title: task.isComplete ? "Reject" : "Complete", backgroundColor: UIColor.greenColor(), callback: { (cell) -> Bool in
                     self.setTask(task, isComplete: !task.isComplete)
                     return true
                 })
             ]
         } else {
-            if task.isComplete {
+            if task.isComplete == true {
                 cell.rightButtons = [
                     MGSwipeButton(title: "Accept", backgroundColor: UIColor.greenColor(), callback: { (cell) -> Bool in
                         self.acceptTask(task)
                         return true
                     }),
-                    MGSwipeButton(title: "Eject", backgroundColor: UIColor.redColor(), callback: { (cell) -> Bool in
+                    MGSwipeButton(title: "Reject", backgroundColor: UIColor.redColor(), callback: { (cell) -> Bool in
                         self.setTask(task, isComplete: false)
                         return true
                     })
@@ -205,7 +216,6 @@ extension TasksViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-//        tableView.deselectRowAtIndexPath(indexPath, animated: true)
         let task = self.dataSource[indexPath.row]
         print(task.attributes())
     }

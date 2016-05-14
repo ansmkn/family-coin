@@ -59,6 +59,10 @@ class FirebaseManager {
         return usersUrl.childByAppendingPath(taskId)
     }
     
+    func setCoins(coins: Int, toUserWithUserId userId: String) {
+        let ref = self.usersUrl.childByAppendingPath(userId)
+        ref.childByAppendingPath("coins").setValue(coins)
+    }
     
 
 }
