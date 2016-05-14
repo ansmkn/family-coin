@@ -7,11 +7,12 @@
 //
 
 import UIKit
+import MGSwipeTableCell
 
-class TaskTableViewCell: UITableViewCell {
+class TaskTableViewCell: MGSwipeTableCell {
     
     required init(coder aDecoder: NSCoder) {
-        fatalError("NSCoding not supported")
+        super.init(coder: aDecoder)!
     }
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {

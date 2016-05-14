@@ -39,8 +39,7 @@ class KeyAuthViewController: BaseViewController {
                 } else {
                     
                     self.activityIndicatorView.stopAnimating()
-                    let def = UserDefaultsManager()
-                    def.apiKey = key
+                    UserDefaultsManager.sharedInstance.apiKey = key
                     self.addUserWithName(name)
                 }
             })
@@ -58,6 +57,7 @@ class KeyAuthViewController: BaseViewController {
                 self.showError(error)
             } else {
                 UserDefaultsManager.sharedInstance.userId = user.userId
+                UserDefaultsManager.sharedInstance.userName = user.name
                 self.performSegueWithIdentifier("START_VIEW_FORM_KEY_VIEW", sender: nil)
             }
         })

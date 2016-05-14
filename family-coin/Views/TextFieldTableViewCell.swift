@@ -7,18 +7,19 @@
 //
 
 import UIKit
+import SnapKit
 
 class TextFieldTableViewCell: UITableViewCell {
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)!
     }
+    
+    @IBOutlet weak var textField: UITextField!
+    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
 
-    override func setSelected(selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+        
     }
 
 }

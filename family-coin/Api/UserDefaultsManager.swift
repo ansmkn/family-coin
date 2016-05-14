@@ -8,6 +8,7 @@ import Foundation
 struct DefaultsKeys {
     static let apiKey = "apiKey"
     static let userId = "userId"
+    static let userName = "userName"
     static let isClient = "isClient"
 }
 
@@ -55,4 +56,18 @@ class UserDefaultsManager {
         }
     }
 
+    private var _userName : String?
+    
+    var userName: String? {
+        set {
+            _userName = newValue
+            defaults.setObject(newValue, forKey: DefaultsKeys.userName)
+        }
+        get {
+            if _userName == nil {
+                _userName = defaults.objectForKey(DefaultsKeys.userName) as? String
+            }
+            return _userName
+        }
+    }
 }

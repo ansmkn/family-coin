@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TextFieldTableViewCell" rowHeight="56" id="Wqs-tl-E0z" customClass="TextFieldTableViewCell" customModule="family_coin" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="56"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Wqs-tl-E0z" id="9m5-1y-IXI">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="55"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RxW-B1-k8j">
+                        <rect key="frame" x="20" y="8" width="280" height="39"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    </textField>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="RxW-B1-k8j" secondAttribute="bottom" constant="8" id="DCV-dt-02a"/>
+                    <constraint firstAttribute="trailing" secondItem="RxW-B1-k8j" secondAttribute="trailing" constant="20" id="RQZ-3j-yZp"/>
+                    <constraint firstItem="RxW-B1-k8j" firstAttribute="top" secondItem="9m5-1y-IXI" secondAttribute="top" constant="8" id="aSA-xJ-h1A"/>
+                    <constraint firstItem="RxW-B1-k8j" firstAttribute="leading" secondItem="9m5-1y-IXI" secondAttribute="leading" constant="20" id="pHG-wb-qOP"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="textField" destination="RxW-B1-k8j" id="vKl-wT-6xt"/>
+            </connections>
+            <point key="canvasLocation" x="382" y="101"/>
+        </tableViewCell>
+    </objects>
+</document>

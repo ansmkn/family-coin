@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A045BEB1CE7431800F287E4 /* KeyboardManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A045BEA1CE7431800F287E4 /* KeyboardManagerProtocol.swift */; };
+		2A20593D1CE7486A00EA8097 /* TaskDescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A20593C1CE7486A00EA8097 /* TaskDescriptionCell.swift */; };
+		2A20593F1CE74BC900EA8097 /* TableViewCells.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A20593E1CE74BC900EA8097 /* TableViewCells.xib */; };
+		2A2059411CE74FE200EA8097 /* TaskDescriptionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A2059401CE74FE200EA8097 /* TaskDescriptionCell.xib */; };
+		2A2059431CE7508E00EA8097 /* TitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2059421CE7508E00EA8097 /* TitleLabel.swift */; };
+		2A20594B1CE7518900EA8097 /* TaskCostEditorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2059491CE7518900EA8097 /* TaskCostEditorCell.swift */; };
+		2A20594C1CE7518900EA8097 /* TaskCostEditorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A20594A1CE7518900EA8097 /* TaskCostEditorCell.xib */; };
+		2A20594E1CE7572000EA8097 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A20594D1CE7572000EA8097 /* Task.swift */; };
+		2A2059511CE7717900EA8097 /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A20594F1CE7717900EA8097 /* TaskCell.swift */; };
+		2A2059521CE7717900EA8097 /* TaskCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A2059501CE7717900EA8097 /* TaskCell.xib */; };
 		2A39622D1CE6932500B4FA0B /* CreateTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A39622C1CE6932500B4FA0B /* CreateTaskViewController.swift */; };
 		2A39622F1CE693F500B4FA0B /* TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A39622E1CE693F500B4FA0B /* TaskViewController.swift */; };
 		2A3962311CE6945900B4FA0B /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3962301CE6945900B4FA0B /* DashboardViewController.swift */; };
@@ -38,6 +48,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2A045BEA1CE7431800F287E4 /* KeyboardManagerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardManagerProtocol.swift; sourceTree = "<group>"; };
+		2A20593C1CE7486A00EA8097 /* TaskDescriptionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskDescriptionCell.swift; sourceTree = "<group>"; };
+		2A20593E1CE74BC900EA8097 /* TableViewCells.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCells.xib; sourceTree = "<group>"; };
+		2A2059401CE74FE200EA8097 /* TaskDescriptionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TaskDescriptionCell.xib; sourceTree = "<group>"; };
+		2A2059421CE7508E00EA8097 /* TitleLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleLabel.swift; sourceTree = "<group>"; };
+		2A2059491CE7518900EA8097 /* TaskCostEditorCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskCostEditorCell.swift; sourceTree = "<group>"; };
+		2A20594A1CE7518900EA8097 /* TaskCostEditorCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TaskCostEditorCell.xib; sourceTree = "<group>"; };
+		2A20594D1CE7572000EA8097 /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		2A20594F1CE7717900EA8097 /* TaskCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
+		2A2059501CE7717900EA8097 /* TaskCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TaskCell.xib; sourceTree = "<group>"; };
 		2A39622C1CE6932500B4FA0B /* CreateTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateTaskViewController.swift; sourceTree = "<group>"; };
 		2A39622E1CE693F500B4FA0B /* TaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskViewController.swift; sourceTree = "<group>"; };
 		2A3962301CE6945900B4FA0B /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
@@ -84,10 +104,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2A2059441CE750D900EA8097 /* Create Task Cells */ = {
+			isa = PBXGroup;
+			children = (
+				92C1A8591CE73B2F001F4CAE /* TextFieldTableViewCell.swift */,
+				2A20593C1CE7486A00EA8097 /* TaskDescriptionCell.swift */,
+				2A20593E1CE74BC900EA8097 /* TableViewCells.xib */,
+				2A2059401CE74FE200EA8097 /* TaskDescriptionCell.xib */,
+				2A2059491CE7518900EA8097 /* TaskCostEditorCell.swift */,
+				2A20594A1CE7518900EA8097 /* TaskCostEditorCell.xib */,
+				2A20594F1CE7717900EA8097 /* TaskCell.swift */,
+				2A2059501CE7717900EA8097 /* TaskCell.xib */,
+			);
+			name = "Create Task Cells";
+			sourceTree = "<group>";
+		};
 		2A3962381CE69C2B00B4FA0B /* Elements */ = {
 			isa = PBXGroup;
 			children = (
 				2A3962391CE69C7900B4FA0B /* StringAttributes.swift */,
+				2A045BEA1CE7431800F287E4 /* KeyboardManagerProtocol.swift */,
 			);
 			path = Elements;
 			sourceTree = "<group>";
@@ -99,6 +135,7 @@
 				2A847A141CE681E30025D96B /* ModelDictionaryProtocol.swift */,
 				2A847A161CE683740025D96B /* FirebaseModelProtocol.swift */,
 				2A847A181CE684030025D96B /* Model.swift */,
+				2A20594D1CE7572000EA8097 /* Task.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -171,7 +208,8 @@
 				2A847A0D1CE6540E0025D96B /* FormTextField.swift */,
 				2A3962361CE69AD500B4FA0B /* UserTableViewCell.swift */,
 				2A39623B1CE69E3D00B4FA0B /* TaskTableViewCell.swift */,
-				92C1A8591CE73B2F001F4CAE /* TextFieldTableViewCell.swift */,
+				2A2059441CE750D900EA8097 /* Create Task Cells */,
+				2A2059421CE7508E00EA8097 /* TitleLabel.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -256,7 +294,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				929B903F1CE6469B00F3B07B /* LaunchScreen.storyboard in Resources */,
+				2A20593F1CE74BC900EA8097 /* TableViewCells.xib in Resources */,
+				2A2059521CE7717900EA8097 /* TaskCell.xib in Resources */,
+				2A2059411CE74FE200EA8097 /* TaskDescriptionCell.xib in Resources */,
 				929B903C1CE6469B00F3B07B /* Assets.xcassets in Resources */,
+				2A20594C1CE7518900EA8097 /* TaskCostEditorCell.xib in Resources */,
 				929B903A1CE6469B00F3B07B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -316,9 +358,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A20594E1CE7572000EA8097 /* Task.swift in Sources */,
 				2A847A171CE683740025D96B /* FirebaseModelProtocol.swift in Sources */,
 				2A3962311CE6945900B4FA0B /* DashboardViewController.swift in Sources */,
 				2A847A101CE669BD0025D96B /* KeyAuthViewController.swift in Sources */,
+				2A2059511CE7717900EA8097 /* TaskCell.swift in Sources */,
 				92C1A85A1CE73B2F001F4CAE /* TextFieldTableViewCell.swift in Sources */,
 				929B90351CE6469B00F3B07B /* AppDelegate.swift in Sources */,
 				2A847A0E1CE6540E0025D96B /* FormTextField.swift in Sources */,
@@ -326,18 +370,22 @@
 				2A847A0A1CE652F80025D96B /* RegisterViewController.swift in Sources */,
 				F36C21AFC92793236841A605 /* BaseViewController.swift in Sources */,
 				F36C2C65FCE417958FE5B652 /* NavigationController.swift in Sources */,
+				2A20594B1CE7518900EA8097 /* TaskCostEditorCell.swift in Sources */,
 				F36C20EDA362DB6C34B5FEDE /* LoginViewController.swift in Sources */,
 				2A847A1B1CE6857F0025D96B /* TasksViewController.swift in Sources */,
 				2A847A191CE684030025D96B /* Model.swift in Sources */,
 				2A39622F1CE693F500B4FA0B /* TaskViewController.swift in Sources */,
 				2A39623C1CE69E3D00B4FA0B /* TaskTableViewCell.swift in Sources */,
 				2A847A131CE6809D0025D96B /* User.swift in Sources */,
+				2A045BEB1CE7431800F287E4 /* KeyboardManagerProtocol.swift in Sources */,
 				2A847A151CE681E30025D96B /* ModelDictionaryProtocol.swift in Sources */,
 				F36C2A4B48A5B97AF3CCAA12 /* FirebaseManager.swift in Sources */,
 				2A3962371CE69AD500B4FA0B /* UserTableViewCell.swift in Sources */,
 				2A39623A1CE69C7900B4FA0B /* StringAttributes.swift in Sources */,
+				2A20593D1CE7486A00EA8097 /* TaskDescriptionCell.swift in Sources */,
 				2A847A0C1CE653E70025D96B /* DefaultButton.swift in Sources */,
 				2A3962351CE69A0E00B4FA0B /* UsersViewController.swift in Sources */,
+				2A2059431CE7508E00EA8097 /* TitleLabel.swift in Sources */,
 				F36C23CADEB4416594E984F8 /* UserDefaultsManager.swift in Sources */,
 				2A39622D1CE6932500B4FA0B /* CreateTaskViewController.swift in Sources */,
 			);
@@ -455,6 +503,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "family-coin/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "seaproduction.family-coin";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -469,6 +518,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "family-coin/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "seaproduction.family-coin";
 				PRODUCT_NAME = "$(TARGET_NAME)";
