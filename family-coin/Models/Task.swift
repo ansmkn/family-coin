@@ -28,10 +28,18 @@ class Task: Model {
         self.title = attributes["title"] as! String
         self.description = attributes["description"] as! String
         self.cost = attributes["cost"] as! Int
-        self.key = attributes["key"] as? String
+        if let key = attributes["key"] {
+            self.key = key as? String
+        }
         self.isComplete = attributes["isComplete"] as! Bool
-        self.userId = attributes["userId"] as? String
-        self.userName = attributes["userName"] as? String
+        if let id = attributes["userId"] {
+            self.userId = id as? String
+        }
+        if let name = attributes["userName"] {
+            self.userName = name as? String
+        }
+        
+        
     }
     
     override func attributes() -> [String: AnyObject] {

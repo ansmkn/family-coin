@@ -60,8 +60,13 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        if indexPath.row == 1 {
+        switch indexPath.row {
+        case 0:
+            UserDefaultsManager.sharedInstance.resetDefaults()
+            self.toStartPage()
+        default:
             self.performSegueWithIdentifier("SETTINGS_TO_USERS", sender: nil)
         }
+        
     }
 }

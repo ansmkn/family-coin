@@ -22,6 +22,7 @@ class UserDefaultsManager {
         
     }
     
+    
     var isClient: Bool {
         return userId != nil
     }
@@ -70,4 +71,24 @@ class UserDefaultsManager {
             return _userName
         }
     }
+    
+    func resetDefaults() {
+        let dicts = defaults.dictionaryRepresentation()
+        for (key, _) in dicts {
+            defaults.removeObjectForKey(key)
+        }
+        defaults.synchronize()
+        _apiKey = nil
+        _userId = nil
+        _userName = nil
+    }
+    
+//    - (void)resetDefaults {
+//    NSUserDefaults * defs = [NSUserDefaults standardUserDefaults];
+//    NSDictionary * dict = [defs dictionaryRepresentation];
+//    for (id key in dict) {
+//    [defs removeObjectForKey:key];
+//    }
+//    [defs synchronize];
+//    }
 }

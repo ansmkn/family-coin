@@ -14,7 +14,7 @@ class KeyAuthViewController: BaseViewController {
     @IBOutlet weak var keyTextField: FormTextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.title = "Bluetooth"
     }
     
     @IBAction func enterButton(sender: AnyObject) {
@@ -58,9 +58,11 @@ class KeyAuthViewController: BaseViewController {
             } else {
                 UserDefaultsManager.sharedInstance.userId = user.userId
                 UserDefaultsManager.sharedInstance.userName = user.name
-                self.performSegueWithIdentifier("START_VIEW_FORM_KEY_VIEW", sender: nil)
+                self.toMainViewControler()
             }
         })
         
     }
+    
+
 }

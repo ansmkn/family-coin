@@ -52,5 +52,15 @@ class BaseViewController: UIViewController {
         return activityIndicator
     }()
     
+    func toMainViewControler() {
+        let appdelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        appdelegate.openTasks()
+    }
+    
+    func toStartPage() {
+        
+        let appdelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        appdelegate.openStartPage()
+    }
 }
 

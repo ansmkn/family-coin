@@ -108,7 +108,8 @@ class TasksViewController: BaseViewController {
     
     func setTask(task: Task, isComplete: Bool) {
         if isClient {
-            var value: [String: AnyObject] = [:]
+            var value = task.attributes()
+            
             value["isComplete"] = isComplete
             value["userName"] = UserDefaultsManager.sharedInstance.userName
             value["userId"] = UserDefaultsManager.sharedInstance.userId
@@ -147,7 +148,20 @@ extension TasksViewController: UITableViewDataSource, UITableViewDelegate {
         
         cell.titleLabel.text = task.title
         cell.descriptionTextView.text = task.description
+        cell.costLabel.text = String(task.cost)
         
+        cell.nameLabel.hidden = task.isComplete == true
+        if task.isComplete {
+            cell.statusLabel.textColor = UIColor.greenColor()
+            cell.statusLabel.text = "Complete"
+            if let name = task.userName {
+                cell.nameLabel.text = name
+            }
+        } else {
+            cell.statusLabel.textColor = UIColor.grayColor()
+            cell.statusLabel.text = "Pending"
+        }
+
         
         if isClient {
             cell.rightButtons = [

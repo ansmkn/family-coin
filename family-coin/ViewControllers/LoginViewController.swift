@@ -13,8 +13,18 @@ class LoginViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        self.title = "Login"
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Done", style: .Plain, target: self,
+                                                                 action: #selector(LoginViewController.didTappedLoginButton(_:)))
+        let tap = UITapGestureRecognizer(target: self, action: #selector(LoginViewController.didUserTapScreen))
+        self.view.addGestureRecognizer(tap)
     }
+    
+    func didUserTapScreen() {
+        self.passwordTextField.resignFirstResponder()
+        self.emailTextField.resignFirstResponder()
+    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -53,15 +63,11 @@ class LoginViewController: BaseViewController {
             if error != nil {
                 self.showError(error)
             } else {
-                self.toMainViewController()
+                self.toMainViewControler()
             }
-            //
         })
         
     }
 
-    func toMainViewController() {
-        self.performSegueWithIdentifier("start-segue", sender: nil)
-    }
     
 }

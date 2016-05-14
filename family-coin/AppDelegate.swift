@@ -16,10 +16,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
-        let userDefaults = UserDefaultsManager()
-        if let _ = userDefaults.apiKey {
-            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("navigationController")
-            self.window?.rootViewController = vc
+        
+        let userDefaults = UserDefaultsManager.sharedInstance
+        if let key = userDefaults.apiKey where !key.isEmpty {
+            openTasks()
+        } else {
+            openStartPage()
         }
         // Override point for customization after application launch.
         return true
@@ -48,5 +50,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 
+    
+    //Navigation 
+    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+    func openTasks() {
+        
+        let nc = storyboard.instantiateViewControllerWithIdentifier("Tasks")
+        self.window?.rootViewController = nc
+    }
+    
+    func openStartPage() {
+        let nc = storyboard.instantiateViewControllerWithIdentifier("Start")
+        self.window?.rootViewController = nc
+    }
+    
 }
 

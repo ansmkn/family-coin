@@ -15,9 +15,20 @@ class RegisterViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Register", style: .Plain, target: self,
+                                                                 action: #selector(RegisterViewController.didTappedRegisterButton(_:)))
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(RegisterViewController.didUserTapScreen))
+        self.view.addGestureRecognizer(tap)
         // Do any additional setup after loading the view, typically from a nib.
     }
 
+    func didUserTapScreen() {
+        self.rPasswordTextField.resignFirstResponder()
+        self.passwordTextField.resignFirstResponder()
+        self.emailTextField.resignFirstResponder()
+    }
+    
     @IBAction func didTappedRegisterButton(sender: AnyObject) {
         
         if let email = emailTextField.text,
@@ -30,7 +41,7 @@ class RegisterViewController: BaseViewController {
                 self.showMessage(nil, message: "Passwords do not match")
                 return
             }
-            
+            self.didUserTapScreen()
             self.registerUser(email, password: password)
             
         } else {
@@ -39,9 +50,7 @@ class RegisterViewController: BaseViewController {
         
     }
     
-    @IBAction func backButton(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: nil)
-    }
+    
     
     func registerUser(email: String!, password: String!) {
 
@@ -57,13 +66,12 @@ class RegisterViewController: BaseViewController {
     }
 
     func dissmisViewController(email: String!, password: String!) {
-
-        //TODO: Rewrite, this terrible method
-        let appDelegate  = UIApplication.sharedApplication().delegate as! AppDelegate
-        let viewController = appDelegate.window!.rootViewController as! LoginViewController
-        viewController.passwordTextField.text = password
-        viewController.emailTextField.text = email
-        self.backButton(self)
+        let vcs = self.navigationController!.viewControllers
+        let lvc = vcs[vcs.count - 2] as! LoginViewController
+        
+        lvc.emailTextField.text = email
+        lvc.passwordTextField.text = password
+        self.navigationController?.popViewControllerAnimated(true)
 
     }
 

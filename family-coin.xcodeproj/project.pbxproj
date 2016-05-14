@@ -17,6 +17,7 @@
 		2A20594E1CE7572000EA8097 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A20594D1CE7572000EA8097 /* Task.swift */; };
 		2A2059511CE7717900EA8097 /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A20594F1CE7717900EA8097 /* TaskCell.swift */; };
 		2A2059521CE7717900EA8097 /* TaskCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A2059501CE7717900EA8097 /* TaskCell.xib */; };
+		2A2059541CE779CC00EA8097 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2059531CE779CC00EA8097 /* StartViewController.swift */; };
 		2A39622D1CE6932500B4FA0B /* CreateTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A39622C1CE6932500B4FA0B /* CreateTaskViewController.swift */; };
 		2A39622F1CE693F500B4FA0B /* TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A39622E1CE693F500B4FA0B /* TaskViewController.swift */; };
 		2A3962311CE6945900B4FA0B /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3962301CE6945900B4FA0B /* DashboardViewController.swift */; };
@@ -58,6 +59,7 @@
 		2A20594D1CE7572000EA8097 /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		2A20594F1CE7717900EA8097 /* TaskCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
 		2A2059501CE7717900EA8097 /* TaskCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TaskCell.xib; sourceTree = "<group>"; };
+		2A2059531CE779CC00EA8097 /* StartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		2A39622C1CE6932500B4FA0B /* CreateTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateTaskViewController.swift; sourceTree = "<group>"; };
 		2A39622E1CE693F500B4FA0B /* TaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskViewController.swift; sourceTree = "<group>"; };
 		2A3962301CE6945900B4FA0B /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
@@ -228,6 +230,7 @@
 				2A3962301CE6945900B4FA0B /* DashboardViewController.swift */,
 				2A3962321CE695A300B4FA0B /* SettingsViewController.swift */,
 				2A3962341CE69A0E00B4FA0B /* UsersViewController.swift */,
+				2A2059531CE779CC00EA8097 /* StartViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -358,6 +361,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A2059541CE779CC00EA8097 /* StartViewController.swift in Sources */,
 				2A20594E1CE7572000EA8097 /* Task.swift in Sources */,
 				2A847A171CE683740025D96B /* FirebaseModelProtocol.swift in Sources */,
 				2A3962311CE6945900B4FA0B /* DashboardViewController.swift in Sources */,
