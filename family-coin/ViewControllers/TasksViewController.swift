@@ -79,7 +79,6 @@ class TasksViewController: BaseViewController {
 extension TasksViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(String(TaskTableViewCell), forIndexPath: indexPath)
-        
         return cell
     }
     

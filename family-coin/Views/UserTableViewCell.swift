@@ -13,9 +13,9 @@ class UserTableViewCell: UITableViewCell {
     required init(coder aDecoder: NSCoder) {
         fatalError("NSCoding not supported")
     }
-
+    
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        super.init(style: .Value1, reuseIdentifier: reuseIdentifier)
     }
 
 }

@@ -36,19 +36,31 @@ class LoginViewController: BaseViewController {
     func loginUser(email: String!, password: String!) {
         self.activityIndicatorView.startAnimating()
         self.firebase.baseUrl.authUser(email, password: password, withCompletionBlock: { (error, data) in
-            self.activityIndicatorView.stopAnimating()
             if error != nil {
+                self.activityIndicatorView.stopAnimating()
                 self.showError(error)
             } else {
-                self.userDefaults.apiKey = data.uid
-                self.toMainViewController()
+                self.prepareUserData(data.uid, email: email)
             }
             //
         })
     }
 
-    func toMainViewController() {
+    func prepareUserData(id: String, email: String) {
+        self.userDefaults.apiKey = id
+        self.firebase.homeUrl.childByAppendingPath("email").setValue(email, withCompletionBlock: { (error, data) in
+            self.activityIndicatorView.stopAnimating()
+            if error != nil {
+                self.showError(error)
+            } else {
+                self.toMainViewController()
+            }
+            //
+        })
         
+    }
+
+    func toMainViewController() {
         self.performSegueWithIdentifier("start-segue", sender: nil)
     }
     

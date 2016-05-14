@@ -10,5 +10,4 @@ import Foundation
 
 protocol ModelDictionaryProtocol {
     func attributes() -> [String: AnyObject]
-//    func setAttributes(attributes: [String: AnyObject])
 }

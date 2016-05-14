@@ -11,7 +11,7 @@ import DZNEmptyDataSet
 
 class UsersViewController: BaseViewController {
     
-    let dataSource: [User] = []
+    var dataSource: [User] = []
     
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
@@ -30,13 +30,32 @@ class UsersViewController: BaseViewController {
         tableView.snp_makeConstraints {
             $0.edges.equalTo(0)
         }
+        
+        self.activityIndicatorView.startAnimating()
+        self.firebase.usersUrl.observeEventType(.Value, withBlock: { snapshot in
+            self.activityIndicatorView.stopAnimating()
+            if let users = snapshot.value as? NSDictionary {
+                var array: [User] = []
+                for dict in users.allValues {
+                    let user = User(attributes: dict as! [String: AnyObject])
+                    array.append(user)
+                }
+                self.dataSource = array
+                self.tableView.reloadData()
+            }
+        })
     }
     
 }
 
 extension UsersViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCellWithIdentifier(String(UserTableViewCell), forIndexPath: indexPath)
+        
+        let user = self.dataSource[indexPath.row]
+        cell.textLabel?.text = user.name
+        cell.detailTextLabel?.text = String(user.coins)
         
         return cell
     }

@@ -18,6 +18,12 @@ class User : Model {
         self.coins = 0
     }
     
+    init(attributes:[String: AnyObject]) {
+        self.coins = attributes["coins"] as! Int
+        self.name = attributes["name"] as! String
+        self.userId = attributes["userId"] as! String
+    }
+    
     override func attributes() -> [String: AnyObject] {
         return ["name" : self.name,
                 "userId": self.userId,
