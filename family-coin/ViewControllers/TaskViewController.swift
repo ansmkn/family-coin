@@ -13,6 +13,6 @@ class TaskViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Task"
+        self.title = NSLocalizedString("Task", comment: "")
     }
 }

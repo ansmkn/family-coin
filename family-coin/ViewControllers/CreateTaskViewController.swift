@@ -47,9 +47,9 @@ class CreateTaskViewController: BaseViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        self.title = task != nil ? "Edit Task" : "Create Task"
+        self.title = task != nil ? NSLocalizedString("Edit Task", comment: "") : NSLocalizedString("Create Task", comment: "")
 
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: task != nil ? "Save" : "Create", style: .Plain, target: self,
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: task != nil ?  NSLocalizedString("Save", comment: ""): NSLocalizedString("Create", comment: ""), style: .Plain, target: self,
                                                                  action: #selector(CreateTaskViewController.didCreateButtonTapped(_:)))
         
         keyboardManager?.subscibeOnKeyboardNotification()
@@ -87,12 +87,12 @@ class CreateTaskViewController: BaseViewController {
         }
         
         guard let title = tf.text?.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()) where !title.isEmpty else {
-            self.showMessage(nil, message: "Title field is not filled")
+            self.showMessage(nil, message: NSLocalizedString("Title field is not filled", comment: ""))
             return
         }
         
         guard let description = tv.text?.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()) where !description.isEmpty else {
-            self.showMessage(nil, message: "Description field is not filled")
+            self.showMessage(nil, message: NSLocalizedString("Description field is not filled", comment: ""))
             return
         }
         
@@ -126,7 +126,7 @@ extension CreateTaskViewController: UITableViewDataSource, UITableViewDelegate {
             let cell = tableView.dequeueReusableCellWithIdentifier(String(TaskDescriptionCell),
                                                                    forIndexPath: indexPath) as! TaskDescriptionCell
             
-            cell.label.text = "Task title"
+            cell.label.text = NSLocalizedString("Task title", comment: "")
             titleTextView = cell.textView
             if task != nil {
                 cell.textView?.text = task!.title
@@ -139,7 +139,7 @@ extension CreateTaskViewController: UITableViewDataSource, UITableViewDelegate {
         case 1:
             let cell = tableView.dequeueReusableCellWithIdentifier(String(TaskDescriptionCell),
                                                                    forIndexPath: indexPath) as! TaskDescriptionCell
-            cell.label.text = "Task description"
+            cell.label.text = NSLocalizedString("Task description", comment: "")
             descriptionTextView = cell.textView
 
             if task != nil {

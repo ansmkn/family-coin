@@ -26,7 +26,7 @@ class UsersViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Users"
+        self.title = NSLocalizedString("Users", comment: "")
         self.view.addSubview(tableView)
         tableView.snp_makeConstraints {
             $0.edges.equalTo(0)
@@ -77,10 +77,10 @@ extension UsersViewController: UITableViewDataSource, UITableViewDelegate {
 extension UsersViewController: DZNEmptyDataSetDelegate, DZNEmptyDataSetSource {
     
     func titleForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
-        return NSAttributedString.emptyDataSetAttributedTitleString("Empty data")
+        return NSAttributedString.emptyDataSetAttributedTitleString(NSLocalizedString("Empty data", comment: ""))
     }
     
     func descriptionForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
-        return NSAttributedString.emptyDataSetAttributedDescriptionString("There are no users yet")
+        return NSAttributedString.emptyDataSetAttributedDescriptionString(NSLocalizedString("There are no users yet", comment: ""))
     }
 }

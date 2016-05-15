@@ -15,7 +15,7 @@ class RegisterViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Register", style: .Plain, target: self,
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: NSLocalizedString("Register", comment: ""), style: .Plain, target: self,
                                                                  action: #selector(RegisterViewController.didTappedRegisterButton(_:)))
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(RegisterViewController.didUserTapScreen))
@@ -36,16 +36,15 @@ class RegisterViewController: BaseViewController {
             
             
             guard password == rPassword else {
-                self.showMessage(nil, message: "Passwords do not match")
+                self.showMessage(nil, message: NSLocalizedString("Passwords do not match", comment: ""))
                 return
             }
             self.didUserTapScreen()
             self.registerUser(email, password: password)
             
         } else {
-            self.showMessage(nil, message: "Empty fields")
+            self.showMessage(nil, message: NSLocalizedString("Empty fields", comment: ""))
         }
-        
     }
     
     func resign() {

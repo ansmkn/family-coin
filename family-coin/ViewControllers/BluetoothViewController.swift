@@ -29,7 +29,7 @@ class BluetoothViewController: BaseViewController {
         
         center?.didConnectBlock = {
             self.descriptionMessage = nil
-            self.titleMessage = "Starting synchronization"
+            self.titleMessage = NSLocalizedString("Starting synchronization", comment: "")
             self.tableView.reloadData()
         }
         
@@ -38,8 +38,8 @@ class BluetoothViewController: BaseViewController {
             $0.edges.equalTo(0)
         }
         
-        titleMessage = "Child, please, give the phone to an adult"
-        descriptionMessage = "If you are an adult, open \"Settings\", select \"Add user\" in the app on the other device, and turn on Bluetooth on both devices"
+        titleMessage = NSLocalizedString("Child, please, give the phone to an adult", comment: "")
+        descriptionMessage = NSLocalizedString("If you are an adult, open \"Settings\", select \"Add user\" in the app on the other device, and turn on Bluetooth on both devices", comment: "")
         // Do any additional setup after loading the view, typically from a nib.
     }
     

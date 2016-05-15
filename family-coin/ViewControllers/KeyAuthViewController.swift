@@ -13,8 +13,8 @@ class KeyAuthViewController: BaseViewController {
     @IBOutlet weak var nameTextField: FormTextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "New user"
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Complete", style: .Plain, target: self,
+        self.title =  NSLocalizedString("New user", comment: "")
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: NSLocalizedString("Complete", comment: ""), style: .Plain, target: self,
                                                                  action: #selector(KeyAuthViewController.enterButton(_:)))
         
         self.navigationItem.backBarButtonItem = nil
@@ -23,7 +23,7 @@ class KeyAuthViewController: BaseViewController {
     @IBAction func enterButton(sender: AnyObject) {
         
         guard let name = nameTextField.text where !name.isEmpty else {
-            self.showMessage(nil, message: "Fill name field")
+            self.showMessage(nil, message: NSLocalizedString("Fill name field", comment: ""))
             return;
         }
         
@@ -39,7 +39,7 @@ class KeyAuthViewController: BaseViewController {
             { snapshot in
                 if let _ = snapshot.value as? NSNull {
                     self.activityIndicatorView.stopAnimating()
-                    self.showMessage(nil, message: "Key is not valid")
+                    self.showMessage(nil, message: NSLocalizedString("Key is not valid", comment: ""))
                 } else {
                     
                     self.activityIndicatorView.stopAnimating()

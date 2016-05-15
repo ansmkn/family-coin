@@ -26,6 +26,7 @@
 		2A3962371CE69AD500B4FA0B /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3962361CE69AD500B4FA0B /* UserTableViewCell.swift */; };
 		2A39623A1CE69C7900B4FA0B /* StringAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3962391CE69C7900B4FA0B /* StringAttributes.swift */; };
 		2A39623C1CE69E3D00B4FA0B /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A39623B1CE69E3D00B4FA0B /* TaskTableViewCell.swift */; };
+		2A7A444A1CE8AF6000FDCBD9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2A7A44491CE8AF6000FDCBD9 /* Localizable.strings */; };
 		2A847A0A1CE652F80025D96B /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A847A091CE652F80025D96B /* RegisterViewController.swift */; };
 		2A847A0C1CE653E70025D96B /* DefaultButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A847A0B1CE653E70025D96B /* DefaultButton.swift */; };
 		2A847A0E1CE6540E0025D96B /* FormTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A847A0D1CE6540E0025D96B /* FormTextField.swift */; };
@@ -76,6 +77,7 @@
 		2A3962361CE69AD500B4FA0B /* UserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 		2A3962391CE69C7900B4FA0B /* StringAttributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringAttributes.swift; sourceTree = "<group>"; };
 		2A39623B1CE69E3D00B4FA0B /* TaskTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
+		2A7A44491CE8AF6000FDCBD9 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		2A847A091CE652F80025D96B /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		2A847A0B1CE653E70025D96B /* DefaultButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultButton.swift; sourceTree = "<group>"; };
 		2A847A0D1CE6540E0025D96B /* FormTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormTextField.swift; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 				F36C2E981CED0494307B3499 /* ViewControllers */,
 				F36C294A7DC57A252C811583 /* Views */,
 				F36C2516E3A47D670CFD80E4 /* Api */,
+				2A7A44491CE8AF6000FDCBD9 /* Localizable.strings */,
 			);
 			path = "family-coin";
 			sourceTree = "<group>";
@@ -326,6 +329,7 @@
 				2A2059521CE7717900EA8097 /* TaskCell.xib in Resources */,
 				2A2059411CE74FE200EA8097 /* TaskDescriptionCell.xib in Resources */,
 				929B903C1CE6469B00F3B07B /* Assets.xcassets in Resources */,
+				2A7A444A1CE8AF6000FDCBD9 /* Localizable.strings in Resources */,
 				2A20594C1CE7518900EA8097 /* TaskCostEditorCell.xib in Resources */,
 				929B903A1CE6469B00F3B07B /* Main.storyboard in Resources */,
 			);

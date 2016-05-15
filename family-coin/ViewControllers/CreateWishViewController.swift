@@ -43,9 +43,9 @@ class CreateWishViewController: BaseViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        self.title = "Create Wish"
+        self.title = NSLocalizedString("Create Wish", comment: "")
         
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Create", style: .Plain, target: self,
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: NSLocalizedString("Create", comment: ""), style: .Plain, target: self,
                                                                  action: #selector(CreateWishViewController.didCreateButtonTapped(_:)))
         
         keyboardManager?.subscibeOnKeyboardNotification()
@@ -67,12 +67,12 @@ class CreateWishViewController: BaseViewController {
         }
         
         guard let title = tf.text?.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()) where !title.isEmpty else {
-            self.showMessage(nil, message: "Title field is not filled")
+            self.showMessage(nil, message: NSLocalizedString("Title field is not filled", comment: ""))
             return
         }
         
         guard let description = tv.text?.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()) where !description.isEmpty else {
-            self.showMessage(nil, message: "Description field is not filled")
+            self.showMessage(nil, message: NSLocalizedString("Description field is not filled", comment: ""))
             return
         }
         
@@ -100,7 +100,7 @@ extension CreateWishViewController: UITableViewDataSource, UITableViewDelegate {
             let cell = tableView.dequeueReusableCellWithIdentifier(String(TaskDescriptionCell),
                                                                    forIndexPath: indexPath) as! TaskDescriptionCell
             
-            cell.label.text = "Wish title"
+            cell.label.text = NSLocalizedString("Wish title", comment: "")
             titleTextView = cell.textView
             cell.textView?.scrollEnabled = false
             cell.textView?.textContainer.maximumNumberOfLines = 1
@@ -110,7 +110,7 @@ extension CreateWishViewController: UITableViewDataSource, UITableViewDelegate {
         default:
             let cell = tableView.dequeueReusableCellWithIdentifier(String(TaskDescriptionCell),
                                                                    forIndexPath: indexPath) as! TaskDescriptionCell
-            cell.label.text = "Wish description"
+            cell.label.text = NSLocalizedString("Wish description", comment: "")
             descriptionTextView = cell.textView
             
             cell.textView?.scrollEnabled = false

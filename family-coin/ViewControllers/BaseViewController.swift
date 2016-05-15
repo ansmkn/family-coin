@@ -23,15 +23,15 @@ class BaseViewController: UIViewController {
     }
 
     func showMessage(title: String?, message: String!) {
-        let titleString = title ?? "Error"
+        let titleString = title ?? NSLocalizedString("Error", comment: "")
         
         let alert = UIAlertController(title: titleString, message: message, preferredStyle: UIAlertControllerStyle.Alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Ok", comment: ""), style: UIAlertActionStyle.Cancel, handler: nil))
         self.presentViewController(alert, animated: true, completion: nil)
     }
 
     func showError(error: NSError?) {
-        let defaultMessage = "Something went wrong"
+        let defaultMessage = NSLocalizedString("Something went wrong", comment: "")
         if error == nil {
             self.showMessage(nil, message: defaultMessage)
             return

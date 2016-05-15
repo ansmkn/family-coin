@@ -28,7 +28,7 @@ class SettingsViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Settings"
+        self.title = NSLocalizedString("Settings", comment: "")
         self.view.addSubview(tableView)
         tableView.snp_makeConstraints {
             $0.edges.equalTo(0)
@@ -37,7 +37,7 @@ class SettingsViewController: BaseViewController {
         
         dataSource.append({
             let cell = UITableViewCell(style: .Default, reuseIdentifier: nil)
-            cell.textLabel?.text = "Logout"
+            cell.textLabel?.text =  NSLocalizedString("Logout", comment: "")
             return cell
             }())
         if !isClient {
@@ -45,21 +45,21 @@ class SettingsViewController: BaseViewController {
             dataSource.append({
                 let cell = UITableViewCell(style: .Default, reuseIdentifier: nil)
                 cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
-                cell.textLabel?.text = "Users"
+                cell.textLabel?.text = NSLocalizedString("Users", comment: "")
                 return cell
                 }())
             
             dataSource.append({
                 let cell = UITableViewCell(style: .Default, reuseIdentifier: nil)
                 cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
-                cell.textLabel?.text = "Wishes"
+                cell.textLabel?.text = NSLocalizedString("Wishes", comment: "")
                 return cell
                 }())
             
             dataSource.append({
                 let cell = UITableViewCell(style: .Default, reuseIdentifier: nil)
                 cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
-                cell.textLabel?.text = "Add user"
+                cell.textLabel?.text = NSLocalizedString("Add user", comment: "")
                 return cell
                 }())
         }

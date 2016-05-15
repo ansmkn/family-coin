@@ -30,7 +30,7 @@ class BluetoothPeripheralViewController: BaseViewController {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         self.peripheral?.startAdvertising()
-        titleMessage = "Please wait the device is synchronized"
+        titleMessage = NSLocalizedString("Please wait the device is synchronized", comment: "")
         
     }
     override func viewWillDisappear(animated: Bool) {
@@ -62,7 +62,7 @@ class BluetoothPeripheralViewController: BaseViewController {
         self.complete = true
         self.peripheral?.stopAdvertising()
         self.activityIndicatorView.stopAnimating()
-        titleMessage = "The data was sent, thanks"
+        titleMessage = NSLocalizedString("The data was sent, thanks", comment: "")
         self.tableView.reloadData()
     }
     

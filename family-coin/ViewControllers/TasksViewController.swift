@@ -38,7 +38,7 @@ class TasksViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Tasks"
+        self.title = NSLocalizedString("Tasks", comment: "")
         if isClient {
             self.configureNavigationBarForClient()
         } else {
@@ -84,13 +84,13 @@ class TasksViewController: BaseViewController {
         })
         
         
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Settings", style: .Plain, target: self, action: #selector(TasksViewController.toSettings))
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: NSLocalizedString("Settings", comment: ""), style: .Plain, target: self, action: #selector(TasksViewController.toSettings))
         
     }
     
     func configureNavigationBarForAdmin() {
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .Plain, target: self, action: #selector(TasksViewController.toTaskCreation))
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Settings", style: .Plain, target: self, action: #selector(TasksViewController.toSettings))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: NSLocalizedString("Add", comment: ""), style: .Plain, target: self, action: #selector(TasksViewController.toTaskCreation))
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: NSLocalizedString("Settings", comment: ""), style: .Plain, target: self, action: #selector(TasksViewController.toSettings))
     }
     
     func toDashboard() {
@@ -162,21 +162,21 @@ extension TasksViewController: UITableViewDataSource, UITableViewDelegate {
         cell.nameLabel.hidden = task.isComplete == true
         if task.isComplete == true {
             cell.statusLabel.textColor = UIColor.greenColor()
-            cell.statusLabel.text = "Completed"
+            cell.statusLabel.text = NSLocalizedString("Completed", comment: "")
             if let name = task.userName {
                 cell.nameLabel.text = name
             }
         } else {
             cell.statusLabel.textColor = UIColor.grayColor()
             if let ui = task.userId where ui == UserDefaultsManager.sharedInstance.userId {
-                cell.statusLabel.text = "Rejected"
+                cell.statusLabel.text = NSLocalizedString("Rejected", comment: "")
             } else {
-                cell.statusLabel.text = "Pending"
+                cell.statusLabel.text = NSLocalizedString("Pending", comment: "")
             }
         }
         
         if isClient {
-            let title = task.isComplete == true ? "Reject" : "Complete"
+            let title = task.isComplete == true ? NSLocalizedString("Reject", comment: "") : NSLocalizedString("Complete", comment: "")
             let color = task.isComplete == true ? UIColor.redColor() : UIColor.greenColor()
             let rightButton = MGSwipeButton(title: title,
                                            backgroundColor: color,
@@ -189,22 +189,22 @@ extension TasksViewController: UITableViewDataSource, UITableViewDelegate {
         } else {
             if task.isComplete == true {
                 cell.rightButtons = [
-                    MGSwipeButton(title: "Accept", backgroundColor: UIColor.greenColor(), callback: { (cell) -> Bool in
+                    MGSwipeButton(title: NSLocalizedString("Accept", comment: ""), backgroundColor: UIColor.greenColor(), callback: { (cell) -> Bool in
                         self.acceptTask(task)
                         return true
                     }),
-                    MGSwipeButton(title: "Reject", backgroundColor: UIColor.redColor(), callback: { (cell) -> Bool in
+                    MGSwipeButton(title: NSLocalizedString("Reject", comment: ""), backgroundColor: UIColor.redColor(), callback: { (cell) -> Bool in
                         self.setTask(task, isComplete: false)
                         return true
                     })
                 ]
             } else {
                 cell.rightButtons = [
-                    MGSwipeButton(title: "Delete", backgroundColor: UIColor.redColor(), callback: { (cell) -> Bool in
+                    MGSwipeButton(title: NSLocalizedString("Delete", comment: ""), backgroundColor: UIColor.redColor(), callback: { (cell) -> Bool in
                         self.deleteTask(task, index: indexPath.row)
                         return true
                     }),
-                    MGSwipeButton(title: "Edit", backgroundColor: UIColor.greenColor(), callback: { (cell) -> Bool in
+                    MGSwipeButton(title: NSLocalizedString("Edit", comment: ""), backgroundColor: UIColor.greenColor(), callback: { (cell) -> Bool in
                         self.editTask(task)
                         return true
                     })
@@ -232,11 +232,11 @@ extension TasksViewController: UITableViewDataSource, UITableViewDelegate {
 extension TasksViewController: DZNEmptyDataSetDelegate, DZNEmptyDataSetSource {
     
     func titleForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
-        return NSAttributedString.emptyDataSetAttributedTitleString("Empty data")
+        return NSAttributedString.emptyDataSetAttributedTitleString(NSLocalizedString("Empty data", comment: ""))
     }
     
     func descriptionForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
-        return NSAttributedString.emptyDataSetAttributedDescriptionString("There are no tasks yet")
+        return NSAttributedString.emptyDataSetAttributedDescriptionString(NSLocalizedString("There are no tasks yet", comment: ""))
     }
 }
 

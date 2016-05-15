@@ -13,8 +13,8 @@ class LoginViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Login"
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Done", style: .Plain, target: self,
+        self.title = NSLocalizedString("Login", comment: "")
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: NSLocalizedString("Done", comment: ""), style: .Plain, target: self,
                                                                  action: #selector(LoginViewController.didTappedLoginButton(_:)))
         let tap = UITapGestureRecognizer(target: self, action: #selector(LoginViewController.didUserTapScreen))
         self.view.addGestureRecognizer(tap)
@@ -39,7 +39,7 @@ class LoginViewController: BaseViewController {
             self.loginUser(email, password: password)
             
         } else {
-            self.showMessage(nil, message: "Empty fields")
+            self.showMessage(nil, message: NSLocalizedString("Empty fields", comment: ""))
         }
     }
     

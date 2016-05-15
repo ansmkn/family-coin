@@ -78,12 +78,12 @@ class DashboardViewController: BaseViewController {
         super.viewWillAppear(animated)
         
         
-        self.title = "Wish list"
+        self.title = NSLocalizedString("Wish list", comment: "")
         if isClient {
             self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .Plain, target: self,
                                                                      action: #selector(DashboardViewController.openCreateWish))
         } else {
-            self.title = "Users' wishes"
+            self.title = NSLocalizedString("Users' wishes", comment: "")
         }
     }
     
@@ -128,11 +128,11 @@ class DashboardViewController: BaseViewController {
         customView.backgroundColor = UIColor.clearColor()
         alertController.view.addSubview(customView)
         
-        let somethingAction = UIAlertAction(title: "Rate", style: UIAlertActionStyle.Default, handler: {(alert: UIAlertAction!) in
+        let somethingAction = UIAlertAction(title: NSLocalizedString("Rate", comment: ""), style: UIAlertActionStyle.Default, handler: {(alert: UIAlertAction!) in
             self.setCostOnWish(wish)
         })
         
-        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: {(alert: UIAlertAction!) in print("cancel")})
+        let cancelAction = UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: UIAlertActionStyle.Cancel, handler: {(alert: UIAlertAction!) in print("cancel")})
         
         alertController.addAction(somethingAction)
         alertController.addAction(cancelAction)
@@ -164,7 +164,7 @@ class DashboardViewController: BaseViewController {
                 
                 self.setRemoveWish(wish)
             } else {
-                self.showMessage(nil, message: "You have not enough coins")
+                self.showMessage(nil, message: NSLocalizedString("You have not enough coins", comment: ""))
             }
         })
     }
@@ -197,22 +197,22 @@ extension DashboardViewController: UITableViewDataSource, UITableViewDelegate {
             cell.nameLabel.hidden = true
             if wish.cost != nil {
                 cell.statusLabel.textColor = UIColor.greenColor()
-                cell.statusLabel.text = "Priced"
+                cell.statusLabel.text = NSLocalizedString("Priced", comment: "")
                 cell.rightButtons = [
-                    MGSwipeButton(title: "Delete", backgroundColor: UIColor.redColor(), callback: { (cell) -> Bool in
+                    MGSwipeButton(title: NSLocalizedString("Delete", comment: ""), backgroundColor: UIColor.redColor(), callback: { (cell) -> Bool in
                         self.setRemoveWish(wish)
                         return true
                     }),
-                    MGSwipeButton(title: "Buy", backgroundColor: UIColor.greenColor(), callback: { (cell) -> Bool in
+                    MGSwipeButton(title: NSLocalizedString("Buy", comment: ""), backgroundColor: UIColor.greenColor(), callback: { (cell) -> Bool in
                         self.setBuyWish(wish)
                         return true
                     })
                 ]
             } else {
                 cell.statusLabel.textColor = UIColor.grayColor()
-                cell.statusLabel.text = "Pending"
+                cell.statusLabel.text = NSLocalizedString("Pending", comment: "")
                 cell.rightButtons = [
-                    MGSwipeButton(title: "Delete", backgroundColor: UIColor.redColor(), callback: { (cell) -> Bool in
+                    MGSwipeButton(title: NSLocalizedString("Delete", comment: ""), backgroundColor: UIColor.redColor(), callback: { (cell) -> Bool in
                         self.setRemoveWish(wish)
                         return true
                     })
@@ -224,32 +224,32 @@ extension DashboardViewController: UITableViewDataSource, UITableViewDelegate {
             cell.statusLabel.textColor = UIColor.greenColor()
             if wish.cost != nil {
                 cell.statusLabel.textColor = UIColor.grayColor()
-                cell.statusLabel.text = "Pending"
+                cell.statusLabel.text = NSLocalizedString("Pending", comment: "")
             } else {
                 cell.statusLabel.textColor = UIColor.grayColor()
-                cell.statusLabel.text = "Pending"
+                cell.statusLabel.text = NSLocalizedString("Pending", comment: "")
                 
             }
             
             if wish.isConfirm == false {
                 if wish.cost != nil {
                     cell.statusLabel.textColor = UIColor.greenColor()
-                    cell.statusLabel.text = "Priced"
+                    cell.statusLabel.text = NSLocalizedString("Priced", comment: "")
                 } else {
                     cell.statusLabel.textColor = UIColor.grayColor()
-                    cell.statusLabel.text = "Pending"
+                    cell.statusLabel.text = NSLocalizedString("Pending", comment: "")
                 }
                 cell.rightButtons = [
-                    MGSwipeButton(title: "Rate", backgroundColor: UIColor.greenColor(), callback: { (cell) -> Bool in
+                    MGSwipeButton(title: NSLocalizedString("Rate", comment: ""), backgroundColor: UIColor.greenColor(), callback: { (cell) -> Bool in
                         self.showCostAlert(forWish: wish)
                         return true
                     })
                 ]
             } else {
                 cell.statusLabel.textColor = UIColor.greenColor()
-                cell.statusLabel.text = "Want buy"
+                cell.statusLabel.text = NSLocalizedString("Want buy", comment: "")
                 cell.rightButtons = [
-                    MGSwipeButton(title: "Accept", backgroundColor: UIColor.greenColor(), callback: { (cell) -> Bool in
+                    MGSwipeButton(title: NSLocalizedString("Accept", comment: ""), backgroundColor: UIColor.greenColor(), callback: { (cell) -> Bool in
                         self.setAccept(wish)
                         return true
                     })
@@ -257,60 +257,6 @@ extension DashboardViewController: UITableViewDataSource, UITableViewDelegate {
             }
         }
         
-
-        
-        
-//        let task = self.dataSource[indexPath.row]
-        
-//        cell.titleLabel.text = task.title
-//        cell.descriptionTextView.text = task.description
-//        cell.costLabel.text = String(task.cost)
-//        
-//        cell.nameLabel.hidden = task.isComplete == true
-//        if (task.isComplete != nil) {
-//            cell.statusLabel.textColor = UIColor.greenColor()
-//            cell.statusLabel.text = "Completed"
-//            if let name = task.userName {
-//                cell.nameLabel.text = name
-//            }
-//        } else {
-//            cell.statusLabel.textColor = UIColor.grayColor()
-//            if let ui = task.userId where ui == UserDefaultsManager.sharedInstance.userId {
-//                cell.statusLabel.text = "Rejected"
-//            } else {
-//                cell.statusLabel.text = "Pending"
-//            }
-//        }
-//        
-//        if isClient {
-//            let title = (task.isComplete != nil) ? "Reject" : "Complete"
-//            let color = (task.isComplete != nil) ? UIColor.redColor() : UIColor.greenColor()
-//            let rightButton = MGSwipeButton(title: title,
-//                                            backgroundColor: color,
-//                                            callback:
-//                { (cell) -> Bool in
-//                    self.setTask(task, isComplete: !task.isComplete)
-//                    return true
-//            })
-//            cell.rightButtons = [rightButton]
-//        } else {
-//            if task.isComplete == true {
-//            } else {
-//                cell.rightButtons = [
-//                    MGSwipeButton(title: "Delete", backgroundColor: UIColor.redColor(), callback: { (cell) -> Bool in
-//                        self.deleteTask(task, index: indexPath.row)
-//                        return true
-//                    }),
-//                    MGSwipeButton(title: "Edit", backgroundColor: UIColor.greenColor(), callback: { (cell) -> Bool in
-//                        self.editTask(task)
-//                        return true
-//                    })
-//                ]
-//            }
-//        }
-        
-        
-//        cell.leftSwipeSettings.transition = MGSwipeTransition.Drag
         return cell
     }
     
@@ -329,10 +275,10 @@ extension DashboardViewController: UITableViewDataSource, UITableViewDelegate {
 extension DashboardViewController: DZNEmptyDataSetDelegate, DZNEmptyDataSetSource {
     
     func titleForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
-        return NSAttributedString.emptyDataSetAttributedTitleString("Empty data")
+        return NSAttributedString.emptyDataSetAttributedTitleString(NSLocalizedString("Empty data", comment: ""))
     }
     
     func descriptionForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
-        return NSAttributedString.emptyDataSetAttributedDescriptionString("There are no whishes yet")
+        return NSAttributedString.emptyDataSetAttributedDescriptionString(NSLocalizedString("There are no whishes yet", comment: ""))
     }
 }
