@@ -31,6 +31,7 @@ class BluetoothPeripheralViewController: BaseViewController {
         super.viewDidAppear(animated)
         self.peripheral?.startAdvertising()
         titleMessage = NSLocalizedString("Please wait the device is synchronized", comment: "")
+        self.tableView.reloadData()
         
     }
     override func viewWillDisappear(animated: Bool) {

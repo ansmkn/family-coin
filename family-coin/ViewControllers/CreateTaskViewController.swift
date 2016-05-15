@@ -35,7 +35,7 @@ class CreateTaskViewController: BaseViewController {
             $0.edges.equalTo(0)
         }
         
-        self.keyboardManager = KeyboardManager(scrollView: tableView)
+//        self.keyboardManager = KeyboardManager(scrollView: tableView)
         let tap = UITapGestureRecognizer(target: self, action: #selector(CreateWishViewController.didUserTapScreen))
         self.view.addGestureRecognizer(tap)
     }

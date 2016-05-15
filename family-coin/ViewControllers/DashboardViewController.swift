@@ -94,7 +94,7 @@ class DashboardViewController: BaseViewController {
     var costLabel: UILabel?
     func showCostAlert(forWish wish: Wish)  {
         
-        let alertController = UIAlertController(title: "\n\n\n\n\n\n", message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
+        let alertController = UIAlertController(title: "\n\n\n\n\n", message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
         let margin:CGFloat = 8.0
         let rect = CGRectMake(margin, margin, alertController.view.bounds.size.width - margin * 4.0, 63)
         let customView = UIView(frame: rect)
@@ -279,6 +279,6 @@ extension DashboardViewController: DZNEmptyDataSetDelegate, DZNEmptyDataSetSourc
     }
     
     func descriptionForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
-        return NSAttributedString.emptyDataSetAttributedDescriptionString(NSLocalizedString("There are no whishes yet", comment: ""))
+        return NSAttributedString.emptyDataSetAttributedDescriptionString(NSLocalizedString("There are no wishes yet", comment: ""))
     }
 }

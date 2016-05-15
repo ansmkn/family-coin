@@ -1,0 +1,30 @@
+
+/* Class = "UITextField"; placeholder = "Email"; ObjectID = "5xy-XT-r2o"; */
+"5xy-XT-r2o.placeholder" = "Email";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "9hA-f2-3gM"; */
+"9hA-f2-3gM.placeholder" = "Пароль";
+
+/* Class = "UITextField"; placeholder = "Reply password"; ObjectID = "Fjg-m6-2Ln"; */
+"Fjg-m6-2Ln.placeholder" = "Повторить пароль";
+
+/* Class = "UILabel"; text = "Family coin"; ObjectID = "OiI-a3-Qb8"; */
+"OiI-a3-Qb8.text" = "Family coin";
+
+/* Class = "UIButton"; normalTitle = "I'm a child"; ObjectID = "QT5-MI-8CR"; */
+"QT5-MI-8CR.normalTitle" = "Я ребенок";
+
+/* Class = "UIButton"; normalTitle = "I'm an adult"; ObjectID = "XLr-zo-LDd"; */
+"XLr-zo-LDd.normalTitle" = "Я взрослый";
+
+/* Class = "UITextField"; placeholder = "Email"; ObjectID = "lWS-Tm-kQ5"; */
+"lWS-Tm-kQ5.placeholder" = "Email";
+
+/* Class = "UIButton"; normalTitle = "Register"; ObjectID = "oed-1r-7s3"; */
+"oed-1r-7s3.normalTitle" = "Регистрация";
+
+/* Class = "UITextField"; placeholder = "User name"; ObjectID = "tQ4-UD-ttn"; */
+"tQ4-UD-ttn.placeholder" = "Имя";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "u3S-yB-epX"; */
+"u3S-yB-epX.placeholder" = "Пароль";

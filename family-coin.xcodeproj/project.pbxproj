@@ -77,6 +77,8 @@
 		2A3962361CE69AD500B4FA0B /* UserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 		2A3962391CE69C7900B4FA0B /* StringAttributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringAttributes.swift; sourceTree = "<group>"; };
 		2A39623B1CE69E3D00B4FA0B /* TaskTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
+		2A5CCF231CE8B3DE00FB6C47 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
+		2A5CCF241CE8B3DE00FB6C47 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		2A7A44491CE8AF6000FDCBD9 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		2A847A091CE652F80025D96B /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		2A847A0B1CE653E70025D96B /* DefaultButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultButton.swift; sourceTree = "<group>"; };
@@ -438,6 +440,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				929B90391CE6469B00F3B07B /* Base */,
+				2A5CCF231CE8B3DE00FB6C47 /* ru */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -446,6 +449,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				929B903E1CE6469B00F3B07B /* Base */,
+				2A5CCF241CE8B3DE00FB6C47 /* ru */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";

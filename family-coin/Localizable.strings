@@ -5,4 +5,62 @@
   Created by Head HandH on 15/05/16.
   Copyright © 2016 Sea. All rights reserved.
 */
+"Something went wrong" = "Что-то пошло не так";
+"Ok" = "Oк";
 "Error" = "Ошибка";
+"Done" = "Завершить";
+"Empty fields" = "Поля не заполнены";
+
+"Please wait the device is synchronized" = "Пожалуйста подождите, устройства синхронизируются";
+"The data was sent, thanks" = "Данные отправлены, спасибо";
+
+"Starting synchronization" = "Подождите идет синхронизация";
+"Child, please, give the phone to an adult" = "Пожалуйста, отдай телефон взрослому";
+"If you are an adult, open \"Settings\", select \"Add user\" in the app on the other device, and turn on Bluetooth on both devices" = "Если вы взрослы, октройте \"Настройки\", выберите \"Добавить пользователя\" в приложении на другом устройстве, и включите Bluetooth на обоих устройствах";
+
+"Edit Task" = "Изменить задание";
+"Create Task" = "Cоздать задание";
+"Save" = "Сохранить";
+"Create" = "Создать";
+"Title field is not filled" = "Введите название";
+"Description field is not filled" = "Поле описания не заполнено";
+"Task title" = "Название задания";
+"Task description" = "Описание";
+
+"Create Wish" = "Создать желание";
+"Wish title" = "Название желания";
+"Wish description" = "Описание";
+
+"Wish list" = "Список желаний";
+"Add" = "Добавить";
+"Users' wishes" = "Желания";
+"Rate" = "Оценить";
+"Cancel" = "Отменить";
+"You have not enough coins" = "У вас не достаточно монет";
+"Priced" = "Оценено";
+"Delete" = "Удалить";
+"Buy" = "Купить";
+"Pending" = "В ожидании";
+"Want buy" = "Хочет купить";
+"Accept" = "Принять";
+"Empty data" = "Пустой список";
+"There are no wishes yet" = "Желания еще не добавлены";
+"New user" = "Новый пользователь";
+"Complete" = "Завершить";
+"Fill name field" = "Укажите имя";
+"Key is not valid" = "Не правильный ключ";
+"Login" = "Вход";
+"Register" = "Регистрация";
+"Passwords do not match" = "Пароли не совпадают";
+"Settings" = "Настройки";
+"Logout" = "Выйти";
+"Users" = "Пользователи";
+"Wishes" = "Желания";
+"Add user" = "Добавить пользователя";
+"Tasks" = "Задания";
+"Completed" = "Завершено";
+"Rejected" = "Отменено";
+"Reject" = "Отменить";
+"Edit" = "Редактировать";
+"There are no tasks yet" = "Задания еще не добавлены";
+"There are no users yet" = "Пользователей нет";

@@ -15,7 +15,8 @@ class RegisterViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: NSLocalizedString("Register", comment: ""), style: .Plain, target: self,
+        self.title = NSLocalizedString("Register", comment: "")
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: NSLocalizedString("Complete", comment: ""), style: .Plain, target: self,
                                                                  action: #selector(RegisterViewController.didTappedRegisterButton(_:)))
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(RegisterViewController.didUserTapScreen))

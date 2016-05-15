@@ -159,14 +159,17 @@ extension TasksViewController: UITableViewDataSource, UITableViewDelegate {
         cell.descriptionTextView.text = task.description
         cell.costLabel.text = String(task.cost)
         
-        cell.nameLabel.hidden = task.isComplete == true
+        if let name = task.userName {
+            cell.nameLabel.text = name
+        }
         if task.isComplete == true {
+            
+            cell.nameLabel.hidden = false
             cell.statusLabel.textColor = UIColor.greenColor()
             cell.statusLabel.text = NSLocalizedString("Completed", comment: "")
-            if let name = task.userName {
-                cell.nameLabel.text = name
-            }
+
         } else {
+            cell.nameLabel.hidden = true
             cell.statusLabel.textColor = UIColor.grayColor()
             if let ui = task.userId where ui == UserDefaultsManager.sharedInstance.userId {
                 cell.statusLabel.text = NSLocalizedString("Rejected", comment: "")
