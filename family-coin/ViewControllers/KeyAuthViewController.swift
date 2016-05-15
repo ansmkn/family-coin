@@ -44,16 +44,52 @@ class KeyAuthViewController: BaseViewController {
                     
                     self.activityIndicatorView.stopAnimating()
                     UserDefaultsManager.sharedInstance.apiKey = key
-                    self.addUserWithName(name)
+                    self.authUser(name)
                 }
             })
+    }
+    
+    func authUser(name: String) {
 
+        checkUser(name, completeBlock: { user in
+            if user == nil {
+                self.addUserWithName(name)
+                return
+            }
+            
+            if let dict = user as? [String: AnyObject] {
+                UserDefaultsManager.sharedInstance.userId = dict["userId"] as? String
+                UserDefaultsManager.sharedInstance.userName = dict["name"] as? String
+                self.toMainViewControler()
+            }
+        })
+    }
+    
+    func checkUser(userName: String, completeBlock:((AnyObject?)->())) {
+        
+        let usersUrl = self.firebase.usersUrl
+        usersUrl.observeSingleEventOfType(.Value, withBlock: { snapshot in
+            if let users = snapshot.value.allValues as? [[String: AnyObject]] {
+                for value in users {
+                    if let name = value["name"] as? String {
+                        if userName == name {
+                            completeBlock(value)
+                            return
+                        }
+                    }
+                }
+                completeBlock(nil)
+            } else {
+                completeBlock(nil)
+            }
+        })
+        
     }
     
     func addUserWithName(name: String!) {
-        
+        self.nameTextField.resignFirstResponder()
+
         let userUrl = self.firebase.usersUrl.childByAutoId()
-        
         let user = User(name: name, userId: userUrl.key)
         
         userUrl.setValue(user.attributes(), withCompletionBlock: { (error, ref) in

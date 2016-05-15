@@ -38,8 +38,6 @@ class Task: Model {
         if let name = attributes["userName"] {
             self.userName = name as? String
         }
-        
-        
     }
     
     override func attributes() -> [String: AnyObject] {
@@ -48,6 +46,9 @@ class Task: Model {
         result["description"] = self.description
         result["cost"] = self.cost
         result["isComplete"] = self.isComplete
+        if self.key != nil {
+            result["key"] = self.key!
+        }
         if self.userId != nil {
             result["userId"] = self.userId
         }

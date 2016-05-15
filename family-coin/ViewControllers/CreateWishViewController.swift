@@ -1,17 +1,14 @@
 //
-//  CreateTaskViewController.swift
+//  CreateWishViewController.swift
 //  family-coin
 //
-//  Created by Head HandH on 14/05/16.
+//  Created by Head HandH on 15/05/16.
 //  Copyright © 2016 Sea. All rights reserved.
 //
 
 import UIKit
-
-class CreateTaskViewController: BaseViewController {
+class CreateWishViewController: BaseViewController {
     
-    var task: Task?
-    private var dataSource: [UITableViewCell] = []
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.delegate = self
@@ -35,7 +32,6 @@ class CreateTaskViewController: BaseViewController {
             $0.edges.equalTo(0)
         }
         
-        self.keyboardManager = KeyboardManager(scrollView: tableView)
         let tap = UITapGestureRecognizer(target: self, action: #selector(CreateWishViewController.didUserTapScreen))
         self.view.addGestureRecognizer(tap)
     }
@@ -47,10 +43,10 @@ class CreateTaskViewController: BaseViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        self.title = task != nil ? "Edit Task" : "Create Task"
-
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: task != nil ? "Save" : "Create", style: .Plain, target: self,
-                                                                 action: #selector(CreateTaskViewController.didCreateButtonTapped(_:)))
+        self.title = "Create Wish"
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Create", style: .Plain, target: self,
+                                                                 action: #selector(CreateWishViewController.didCreateButtonTapped(_:)))
         
         keyboardManager?.subscibeOnKeyboardNotification()
     }
@@ -59,29 +55,13 @@ class CreateTaskViewController: BaseViewController {
         super.viewWillDisappear(animated)
         keyboardManager?.unsubscribeFromKeyboardNotification()
     }
-    
-    var sliderCell : TaskCostEditorCell? {
-        willSet {
-            if sliderCell == nil {
-                newValue?.slider.addTarget(self, action:#selector(CreateTaskViewController.didSliderMove(_:)) , forControlEvents: UIControlEvents.ValueChanged)
-            }
-        }
-    }
-    
-    func didSliderMove(slider: UISlider) {
-        sliderCell?.label.text = String(Int(slider.value))
-    }
+
     
     var titleTextView: UITextView?
     var descriptionTextView: UITextView?
     
     func didCreateButtonTapped(button: UIBarButtonItem) {
-        guard let tf = titleTextView, let tv = descriptionTextView, let sl = sliderCell?.label else {
-            self.showError(nil)
-            return
-        }
-        
-        guard let cost = sl.text where !cost.isEmpty else {
+        guard let tf = titleTextView, let tv = descriptionTextView else {
             self.showError(nil)
             return
         }
@@ -96,29 +76,23 @@ class CreateTaskViewController: BaseViewController {
             return
         }
         
-        createTask(title, description: description, cost: cost)
+        createWish(title, description: description)
         
     }
-
-    func createTask(title: String, description: String, cost: String) {
-        
-        if task != nil {
-            task?.title = title
-            task?.description = description
-            task?.cost = Int(cost)
-            firebase.tasksUrl.childByAppendingPath(task!.key).setValue(task!.attributes())
-        } else {
-            let newTask = Task(title: title, description: description, cost: Int(cost)!, isComplete: false)
-            let ref = firebase.tasksUrl.childByAutoId()
-            newTask.key = ref.key
-            ref.setValue(newTask.attributes())
-        }
+    
+    func createWish(title: String, description: String) {
+        let ref = firebase.wishesUrl.childByAutoId()
+        let uiid = ref.key
+        let userId = UserDefaultsManager.sharedInstance.userId
+        let userName = UserDefaultsManager.sharedInstance.userName
+        let newWish = Wish(uiid: uiid, title: title, description: description, userId: userId!, userName: userName!)
+        ref.setValue(newWish.attributes())
         
         self.navigationController?.popViewControllerAnimated(true)
     }
 }
 
-extension CreateTaskViewController: UITableViewDataSource, UITableViewDelegate {
+extension CreateWishViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         switch indexPath.row {
         case 0:
@@ -126,60 +100,43 @@ extension CreateTaskViewController: UITableViewDataSource, UITableViewDelegate {
             let cell = tableView.dequeueReusableCellWithIdentifier(String(TaskDescriptionCell),
                                                                    forIndexPath: indexPath) as! TaskDescriptionCell
             
-            cell.label.text = "Task title"
+            cell.label.text = "Wish title"
             titleTextView = cell.textView
-            if task != nil {
-                cell.textView?.text = task!.title
-            }
             cell.textView?.scrollEnabled = false
             cell.textView?.textContainer.maximumNumberOfLines = 1
             cell.textView?.textContainer.lineBreakMode = .ByTruncatingTail;
             cell.textView?.delegate = self
             return cell
-        case 1:
+        default:
             let cell = tableView.dequeueReusableCellWithIdentifier(String(TaskDescriptionCell),
                                                                    forIndexPath: indexPath) as! TaskDescriptionCell
-            cell.label.text = "Task description"
+            cell.label.text = "Wish description"
             descriptionTextView = cell.textView
-
-            if task != nil {
-                cell.textView?.text = task!.description
-            }
+            
             cell.textView?.scrollEnabled = false
             cell.textView?.textContainer.maximumNumberOfLines = 6
             cell.textView?.delegate = self
             return cell
-        default:
             
-            let cell = tableView.dequeueReusableCellWithIdentifier(String(TaskCostEditorCell),
-                                                                   forIndexPath: indexPath) as! TaskCostEditorCell
-            sliderCell = cell
-            if task != nil {
-                sliderCell?.slider.value = Float(task!.cost)
-            }
-            didSliderMove(cell.slider)
-            return cell
         }
     }
     
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return 2
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         switch indexPath.row {
         case 0:
             return 60
-        case 1:
-            return 150
         default:
-            return 63
+            return 150
         }
     }
 }
 
-extension CreateTaskViewController: UITextViewDelegate {
+extension CreateWishViewController: UITextViewDelegate {
     func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
         if textView == titleTextView {
             if text == "\n" {
@@ -187,8 +144,6 @@ extension CreateTaskViewController: UITextViewDelegate {
                 return false
             }
         }
-        
-        
         return true
         //
     }

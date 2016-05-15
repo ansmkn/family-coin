@@ -16,6 +16,7 @@ class UsersViewController: BaseViewController {
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.delegate = self
+        tableView.allowsSelection = false
         tableView.dataSource = self
         tableView.emptyDataSetSource = self
         tableView.tableFooterView = UIView()
@@ -65,8 +66,12 @@ extension UsersViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+//        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+//        let user = self.dataSource[indexPath.row]
+//        self.performSegueWithIdentifier("USERS_TO_WISHES", sender: user)
     }
+    
+
 }
 
 extension UsersViewController: DZNEmptyDataSetDelegate, DZNEmptyDataSetSource {

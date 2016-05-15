@@ -64,7 +64,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cuu-5j-CSC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2200" y="336"/>
+            <point key="canvasLocation" x="2108" y="720"/>
         </scene>
         <!--Create Task View Controller-->
         <scene sceneID="ZJa-pI-Z7c">
@@ -82,7 +82,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ruv-vf-HXd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2200" y="-431"/>
+            <point key="canvasLocation" x="2488" y="405"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="Xla-If-SQ5">
@@ -100,11 +100,12 @@
                     <connections>
                         <segue destination="Ppm-QY-g73" kind="show" identifier="SETTINGS_TO_USERS" id="dEo-QA-hdB"/>
                         <segue destination="Lcn-Y1-9ra" kind="show" identifier="TO_PERIPHERAL" id="kSK-hQ-JWO"/>
+                        <segue destination="4ji-NH-12p" kind="show" identifier="SETTINGS_TO_WISHES" id="t0v-Lg-40Q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yCn-DM-FSn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2775" y="-720"/>
+            <point key="canvasLocation" x="2339" y="-882"/>
         </scene>
         <!--Bluetooth Peripheral View Controller-->
         <scene sceneID="SDH-ys-diz">
@@ -122,7 +123,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dgh-tz-SFj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3271" y="-1098"/>
+            <point key="canvasLocation" x="2801" y="-882"/>
         </scene>
         <!--Users View Controller-->
         <scene sceneID="c1o-J6-dbk">
@@ -140,7 +141,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="okS-aA-uzR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3284" y="-478"/>
+            <point key="canvasLocation" x="2784" y="-230"/>
         </scene>
         <!--Dashboard View Controller-->
         <scene sceneID="YUP-KA-HHr">
@@ -155,10 +156,31 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <segue destination="r7m-GY-6gt" kind="show" identifier="CREATE_WISH" id="aSR-hH-IKP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B2x-VP-gW8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2775" y="-41"/>
+            <point key="canvasLocation" x="2373" y="-217"/>
+        </scene>
+        <!--Create Wish View Controller-->
+        <scene sceneID="gtP-pI-bCh">
+            <objects>
+                <viewController id="r7m-GY-6gt" customClass="CreateWishViewController" customModule="family_coin" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ich-7Y-fD1"/>
+                        <viewControllerLayoutGuide type="bottom" id="Cxd-w8-en1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="q6h-4Q-p9f">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Cr-sT-1gC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2921" y="405"/>
         </scene>
         <!--Start View Controller-->
         <scene sceneID="ge7-Yu-MlA">
@@ -309,19 +331,6 @@
                                     <segue destination="QhE-Bw-hFD" kind="show" id="zsZ-mo-ifa"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JTM-Ff-HNx" customClass="DefaultButton" customModule="family_coin" customModuleProvider="target">
-                                <rect key="frame" x="258" y="520" width="42" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="Xdz-SX-Y9o"/>
-                                    <constraint firstAttribute="width" constant="120" id="qeV-Ir-JOw"/>
-                                </constraints>
-                                <state key="normal" title="About"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="qeV-Ir-JOw"/>
-                                    </mask>
-                                </variation>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Family coin" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OiI-a3-Qb8">
                                 <rect key="frame" x="105" y="88" width="111" height="27"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
@@ -335,7 +344,6 @@
                             <constraint firstItem="9hA-f2-3gM" firstAttribute="top" secondItem="lWS-Tm-kQ5" secondAttribute="bottom" constant="8" id="1cH-Zo-1zt"/>
                             <constraint firstItem="lWS-Tm-kQ5" firstAttribute="leading" secondItem="9iY-v5-Rt1" secondAttribute="leading" constant="20" id="75R-fe-Frs"/>
                             <constraint firstItem="OiI-a3-Qb8" firstAttribute="top" secondItem="vuT-cP-erW" secondAttribute="bottom" constant="24" id="9iC-nl-lrR"/>
-                            <constraint firstAttribute="trailing" secondItem="JTM-Ff-HNx" secondAttribute="trailing" constant="20" id="Ci2-jo-9Hp"/>
                             <constraint firstItem="oed-1r-7s3" firstAttribute="leading" secondItem="9iY-v5-Rt1" secondAttribute="leading" constant="20" id="O8B-37-yVW"/>
                             <constraint firstAttribute="trailing" secondItem="9hA-f2-3gM" secondAttribute="trailing" constant="20" id="O8B-vs-ype"/>
                             <constraint firstItem="lWS-Tm-kQ5" firstAttribute="top" secondItem="OiI-a3-Qb8" secondAttribute="bottom" constant="61" id="PZQ-eV-vuR"/>
@@ -348,7 +356,6 @@
                             <constraint firstAttribute="trailing" secondItem="lWS-Tm-kQ5" secondAttribute="trailing" constant="20" id="dQS-Yb-z4o"/>
                             <constraint firstItem="OiI-a3-Qb8" firstAttribute="centerX" secondItem="9iY-v5-Rt1" secondAttribute="centerX" id="f0f-at-X3n"/>
                             <constraint firstItem="lWS-Tm-kQ5" firstAttribute="centerY" secondItem="9iY-v5-Rt1" secondAttribute="centerY" id="g02-hX-s3n"/>
-                            <constraint firstItem="3FX-BQ-xsI" firstAttribute="top" secondItem="JTM-Ff-HNx" secondAttribute="bottom" constant="8" id="kdp-o7-vi5"/>
                             <constraint firstItem="lWS-Tm-kQ5" firstAttribute="leading" secondItem="9iY-v5-Rt1" secondAttribute="leading" constant="20" id="nB6-14-2N5"/>
                         </constraints>
                         <variation key="default">
@@ -434,7 +441,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NT0-U1-hRM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1708" y="802"/>
+            <point key="canvasLocation" x="1576" y="802"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="oBP-xs-jza">
@@ -544,4 +551,7 @@
             <point key="canvasLocation" x="671" y="21"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="t0v-Lg-40Q"/>
+    </inferredMetricsTieBreakers>
 </document>

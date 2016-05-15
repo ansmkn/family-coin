@@ -20,10 +20,15 @@ class SettingsViewController: BaseViewController {
         return tableView
     }()
     
+    let isClient: Bool
+    required init(coder: NSCoder){
+        self.isClient = UserDefaultsManager.sharedInstance.isClient
+        super.init(coder: coder)!
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Settings"
-//        TO_PERIPHERAL
         self.view.addSubview(tableView)
         tableView.snp_makeConstraints {
             $0.edges.equalTo(0)
@@ -35,20 +40,29 @@ class SettingsViewController: BaseViewController {
             cell.textLabel?.text = "Logout"
             return cell
             }())
-        
-        dataSource.append({
-            let cell = UITableViewCell(style: .Default, reuseIdentifier: nil)
-            cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
-            cell.textLabel?.text = "Users"
-            return cell
-            }())
-        
-        dataSource.append({
-            let cell = UITableViewCell(style: .Default, reuseIdentifier: nil)
-            cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
-            cell.textLabel?.text = "Add user"
-            return cell
-            }())
+        if !isClient {
+            
+            dataSource.append({
+                let cell = UITableViewCell(style: .Default, reuseIdentifier: nil)
+                cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
+                cell.textLabel?.text = "Users"
+                return cell
+                }())
+            
+            dataSource.append({
+                let cell = UITableViewCell(style: .Default, reuseIdentifier: nil)
+                cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
+                cell.textLabel?.text = "Wishes"
+                return cell
+                }())
+            
+            dataSource.append({
+                let cell = UITableViewCell(style: .Default, reuseIdentifier: nil)
+                cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
+                cell.textLabel?.text = "Add user"
+                return cell
+                }())
+        }
         
         
         self.tableView.reloadData()
@@ -75,9 +89,9 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
         case 1:
             self.performSegueWithIdentifier("SETTINGS_TO_USERS", sender: nil)
         case 2:
-            self.performSegueWithIdentifier("TO_PERIPHERAL", sender: nil)
+            self.performSegueWithIdentifier("SETTINGS_TO_WISHES", sender: nil)
         default:
-            break;
+            self.performSegueWithIdentifier("TO_PERIPHERAL", sender: nil)
         }
         
     }

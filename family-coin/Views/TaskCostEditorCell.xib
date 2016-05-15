@@ -14,8 +14,11 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="62"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="10" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="CEF-qM-5c2">
+                        <rect key="frame" x="18" y="16" width="226" height="31"/>
+                    </slider>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="spS-pX-J1f">
-                        <rect key="frame" x="250" y="21" width="50" height="21"/>
+                        <rect key="frame" x="250" y="20" width="50" height="21"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="50" id="NLK-H7-xo5"/>
                         </constraints>
@@ -23,9 +26,6 @@
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="10" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="CEF-qM-5c2">
-                        <rect key="frame" x="18" y="16" width="226" height="31"/>
-                    </slider>
                 </subviews>
                 <constraints>
                     <constraint firstItem="spS-pX-J1f" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="0S0-Eh-lwL"/>

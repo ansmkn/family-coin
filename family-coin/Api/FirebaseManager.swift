@@ -11,6 +11,7 @@ struct Urls {
     static let baseUrlString = "https://blinding-torch-7229.firebaseio.com"
     static let usersUrlString = "users"
     static let tasksUrlString = "tasks"
+    static let wishesUrlString = "wishes"
 }
 
 class FirebaseManager {
@@ -64,5 +65,18 @@ class FirebaseManager {
         ref.childByAppendingPath("coins").setValue(coins)
     }
     
+    private var _wishesUrl: Firebase!
+    var wishesUrl: Firebase {
+        get {
+            if _wishesUrl == nil {
+                _wishesUrl = self.homeUrl.childByAppendingPath(Urls.wishesUrlString)
+            }
+            return _wishesUrl
+        }
+    }
+    
+    func wishesUrl(wishId: String) -> Firebase {
+        return wishesUrl.childByAppendingPath(wishId)
+    }
 
 }

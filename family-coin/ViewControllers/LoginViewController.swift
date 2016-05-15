@@ -43,7 +43,13 @@ class LoginViewController: BaseViewController {
         }
     }
     
+    func resign() {
+        self.passwordTextField.resignFirstResponder()
+        self.emailTextField.resignFirstResponder()
+    }
+    
     func loginUser(email: String!, password: String!) {
+        self.resign()
         self.activityIndicatorView.startAnimating()
         self.firebase.baseUrl.authUser(email, password: password, withCompletionBlock: { (error, data) in
             if error != nil {

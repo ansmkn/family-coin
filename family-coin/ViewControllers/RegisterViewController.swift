@@ -24,9 +24,7 @@ class RegisterViewController: BaseViewController {
     }
 
     func didUserTapScreen() {
-        self.rPasswordTextField.resignFirstResponder()
-        self.passwordTextField.resignFirstResponder()
-        self.emailTextField.resignFirstResponder()
+        self.resign()
     }
     
     @IBAction func didTappedRegisterButton(sender: AnyObject) {
@@ -50,10 +48,14 @@ class RegisterViewController: BaseViewController {
         
     }
     
-    
+    func resign() {
+        self.rPasswordTextField.resignFirstResponder()
+        self.passwordTextField.resignFirstResponder()
+        self.emailTextField.resignFirstResponder()
+    }
     
     func registerUser(email: String!, password: String!) {
-
+        self.resign()
         self.activityIndicatorView.startAnimating()
         self.firebase.baseUrl.createUser(email, password: password, withCompletionBlock: { error in
             self.activityIndicatorView.stopAnimating()

@@ -63,9 +63,9 @@ class TasksViewController: BaseViewController {
             if let tasks = snapshot.value as? NSDictionary {
                 var array: [Task] = []
                 for dict in tasks.allValues {
-                    let user = Task(attributes: dict as! [String: AnyObject])
-                    user.ref = ref.childByAppendingPath(user.key)
-                    array.append(user)
+                    let task = Task(attributes: dict as! [String: AnyObject])
+                    task.ref = ref.childByAppendingPath(task.key)
+                    array.append(task)
                 }
                 self.dataSource = array
                 self.tableView.reloadData()
@@ -82,6 +82,9 @@ class TasksViewController: BaseViewController {
             self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: String(coins) + " F", style: .Plain, target: self, action: #selector(TasksViewController.toDashboard))
             
         })
+        
+        
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Settings", style: .Plain, target: self, action: #selector(TasksViewController.toSettings))
         
     }
     
@@ -114,8 +117,6 @@ class TasksViewController: BaseViewController {
     
     func deleteTask(task: Task, index: Int) {
         task.ref?.removeValue()
-        
-//        task.
     }
     
     func editTask(task: Task) {
@@ -159,7 +160,7 @@ extension TasksViewController: UITableViewDataSource, UITableViewDelegate {
         cell.costLabel.text = String(task.cost)
         
         cell.nameLabel.hidden = task.isComplete == true
-        if (task.isComplete != nil) {
+        if task.isComplete == true {
             cell.statusLabel.textColor = UIColor.greenColor()
             cell.statusLabel.text = "Completed"
             if let name = task.userName {
@@ -175,12 +176,16 @@ extension TasksViewController: UITableViewDataSource, UITableViewDelegate {
         }
         
         if isClient {
-            cell.rightButtons = [
-                MGSwipeButton(title: task.isComplete ? "Reject" : "Complete", backgroundColor: UIColor.greenColor(), callback: { (cell) -> Bool in
+            let title = task.isComplete == true ? "Reject" : "Complete"
+            let color = task.isComplete == true ? UIColor.redColor() : UIColor.greenColor()
+            let rightButton = MGSwipeButton(title: title,
+                                           backgroundColor: color,
+                                           callback:
+                { (cell) -> Bool in
                     self.setTask(task, isComplete: !task.isComplete)
                     return true
-                })
-            ]
+            })
+            cell.rightButtons = [rightButton]
         } else {
             if task.isComplete == true {
                 cell.rightButtons = [
@@ -206,6 +211,7 @@ extension TasksViewController: UITableViewDataSource, UITableViewDelegate {
                 ]
             }
         }
+
         
         cell.leftSwipeSettings.transition = MGSwipeTransition.Drag
         return cell
